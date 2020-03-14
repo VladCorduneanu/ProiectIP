@@ -9,3 +9,5 @@ Proiect IP
 		-Trello : Mentinere board cu task-uri
 		-FB: Chat
 		-Google Drive : Stocare cloud fisiere
+
+Marian Zeul proiectului
