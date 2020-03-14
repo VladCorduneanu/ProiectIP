@@ -1,5 +1,6 @@
 Proiect IP
--Prima modificare
+-Prima modificare.
+-A doua modificare.
 
 -Lista tools:   -Skype :call-uri, videoconferinta si desktop sharing
 		-Github : mentinere git pentru proiect
