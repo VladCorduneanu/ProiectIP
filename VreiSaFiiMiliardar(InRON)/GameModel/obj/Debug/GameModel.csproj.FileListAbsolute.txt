@@ -1,0 +1,9 @@
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\GameModel\bin\Debug\GameModel.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\GameModel\bin\Debug\GameModel.pdb
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\GameModel\obj\Debug\GameModel.csprojAssemblyReference.cache
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\GameModel\obj\Debug\GameModel.csproj.CoreCompileInputs.cache
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\GameModel\obj\Debug\GameModel.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\GameModel\obj\Debug\GameModel.pdb
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\GameModel\bin\Debug\Interfaces.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\GameModel\bin\Debug\Interfaces.pdb
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\GameModel\obj\Debug\GameModel.csproj.CopyComplete
