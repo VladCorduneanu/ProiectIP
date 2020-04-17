@@ -10,7 +10,6 @@ Proiect IP
 		-Trello : Mentinere board cu task-uri
 		-FB: Chat
 		-Google Drive : Stocare cloud fisiere
-
 Idei proiect:
 -Aplicatie de cultura generala -P4 2015 P17 2014
 -implementare ca la P1 2014
