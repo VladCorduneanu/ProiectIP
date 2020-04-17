@@ -10,10 +10,10 @@ Proiect IP
 		-Trello : Mentinere board cu task-uri
 		-FB: Chat
 		-Google Drive : Stocare cloud fisiere
+
 Idei proiect:
 -Aplicatie de cultura generala -P4 2015 P17 2014
 -implementare ca la P1 2014
--
 
 
 Resurse:
@@ -41,4 +41,32 @@ Idei Implementare:
 			    -Scor 
 			    -Game
 			    -Final
-		      PRESENTER: ???	   
+		      PRESENTER: ???
+
+Reguli De programare:
+WINDOWS FORMS
+-In Windows Forms nu trebuie sa existe elemente cu numele default (din fereastra de creatie a formului)
+
+Coding Guide:
+-Proprietatile publice vor avea getter si setter
+-proprietati private: _variabila
+-proprietati publice: VariabilaPublica
+-variabila locala: variabilaLocala
+-Interfetele incep cu I : IInterfata
+-clasele cu litera mare : Clasa
+-parametri functii : parametru
+-nume functii : Functie
+
+Loguri:
+-"Clasa::Functia : Textul comentariului"
+
+Comentarii:
+La inceput Functii: 	/// => 	/// <summary>
+        		/// Comentariu Functie
+        		/// </summary>
+        		/// <returns> Status </returns>
+
+In functie:	/*--> Comentariu <--*/
+
+Nume commit-uri: 
+#no.task what has been done to that task    

@@ -25,24 +25,27 @@ namespace VreiSaFiiMiliardar_InRON_
         {
             Console.WriteLine("View has been created");
         }
+        
         public bool StartProgram()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Forms creation
+            
             _login = new Login();
             _menu = new Menu();
             _gameView = new GameView();
-            Console.WriteLine("Forms have been initialised");
+            Console.WriteLine("View::StartProgram() : Forms have been initialised");
 
             // Presenter creation
             _presenter = new Presenter((IView)this);
 
             // Running the app
-            Console.WriteLine("Running application");
+            Console.WriteLine("View::StartProgram() : Running application");
             Application.Run(_login);
 
+            
             return true;
         }
     }
