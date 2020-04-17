@@ -1,9 +1,0 @@
-D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\DatabaseAcces\bin\Debug\DatabaseAcces.dll
-D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\DatabaseAcces\bin\Debug\DatabaseAcces.pdb
-D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\DatabaseAcces\obj\Debug\DatabaseAcces.csprojAssemblyReference.cache
-D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\DatabaseAcces\obj\Debug\DatabaseAcces.csproj.CoreCompileInputs.cache
-D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\DatabaseAcces\obj\Debug\DatabaseAcces.dll
-D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\DatabaseAcces\obj\Debug\DatabaseAcces.pdb
-D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\DatabaseAcces\bin\Debug\Interfaces.dll
-D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\DatabaseAcces\bin\Debug\Interfaces.pdb
-D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\DatabaseAcces\obj\Debug\DatabaseAcces.csproj.CopyComplete
