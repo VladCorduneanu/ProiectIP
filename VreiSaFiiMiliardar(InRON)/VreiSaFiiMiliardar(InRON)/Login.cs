@@ -29,7 +29,8 @@ namespace VreiSaFiiMiliardar_InRON_
             Menu menu = new Menu();
             this.Hide();
             menu.Show();
-             
+            
+           
         }
     }
 }
