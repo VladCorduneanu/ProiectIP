@@ -15,6 +15,21 @@ namespace VreiSaFiiMiliardar_InRON_
         public Login()
         {
             InitializeComponent();
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            
+            Menu menu = new Menu();
+            this.Hide();
+            menu.Show();
+             
         }
     }
 }

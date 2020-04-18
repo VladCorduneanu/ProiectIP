@@ -16,5 +16,10 @@ namespace VreiSaFiiMiliardar_InRON_
         {
             InitializeComponent();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
