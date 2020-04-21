@@ -25,7 +25,8 @@ namespace NView
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            
+
+            //TODO Apelarea unei functii din presenter
             Menu menu = new Menu();
             this.Hide();
             menu.Show();
