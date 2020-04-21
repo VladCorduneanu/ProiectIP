@@ -10,15 +10,18 @@ namespace NPresenter
     public class Presenter : IPresenter
     {
         private IView _view;
+        private IModelController _model;
 
-        public Presenter(IView view)
+        public Presenter(IView view, IModelController model)
         {
-            Init(view);
+            Init(view,model);
         }
-        public void Init(IView view) // Must be called in constructor
+        
+        public void Init(IView view, IModelController model)
         {
             _view = view;
-            
+            _model = model;
+
         }
     }
 }

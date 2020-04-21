@@ -1,5 +1,5 @@
 ﻿using Interfaces;
-using NPresenter;
+//using NPresenter;
 
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VreiSaFiiMiliardar_InRON_
+namespace NView
 {
     public class View : IView
     {
@@ -24,28 +24,36 @@ namespace VreiSaFiiMiliardar_InRON_
         public View()
         {
             Console.WriteLine("View has been created");
+            Init();
         }
-        
-        public bool StartProgram()
+
+        public bool Init()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Forms creation
-            
+
             _login = new Login();
             _menu = new Menu();
             _gameView = new GameView();
             Console.WriteLine("View::StartProgram() : Forms have been initialised");
 
-            // Presenter creation
-            _presenter = new Presenter((IView)this);
-
             // Running the app
             Console.WriteLine("View::StartProgram() : Running application");
+            
+            return true;
+        }
+    
+        public void SetPresenter(IPresenter presenter)
+        {
+            _presenter = presenter;
+        }
+
+        public bool StartApplication()
+        {
             Application.Run(_login);
 
-            
             return true;
         }
     }

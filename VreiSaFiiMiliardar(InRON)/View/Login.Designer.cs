@@ -1,4 +1,4 @@
-﻿namespace VreiSaFiiMiliardar_InRON_
+﻿namespace NView
 {
     partial class Login
     {
@@ -96,7 +96,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::VreiSaFiiMiliardar_InRON_.Properties.Resources.Login_image;
+            //TODO ALEX 
+            //this.BackgroundImage = global::View.Properties.Resources.Login_image;
             this.ClientSize = new System.Drawing.Size(1064, 601);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.labelPassword);

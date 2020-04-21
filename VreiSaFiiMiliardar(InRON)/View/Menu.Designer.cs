@@ -1,4 +1,4 @@
-﻿namespace VreiSaFiiMiliardar_InRON_
+﻿namespace NView
 {
     partial class Menu
     {
@@ -47,6 +47,7 @@
             this.buttonStartGame.TabIndex = 0;
             this.buttonStartGame.Text = "Start Game";
             this.buttonStartGame.UseVisualStyleBackColor = false;
+            this.buttonStartGame.Click += new System.EventHandler(this.buttonStartGame_Click);
             // 
             // buttonSettings
             // 
@@ -94,7 +95,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::VreiSaFiiMiliardar_InRON_.Properties.Resources.Menu_image;
             this.ClientSize = new System.Drawing.Size(1064, 601);
             this.Controls.Add(this.buttonRanking);
             this.Controls.Add(this.buttonExit);

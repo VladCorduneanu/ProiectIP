@@ -12,6 +12,8 @@ namespace Interfaces
         /// Starts the Program through the viewer
         /// </summary>
         /// <returns> Status </returns>
-        bool StartProgram();
+        bool Init();
+        void SetPresenter(IPresenter presenter);
+        bool StartApplication();
     }
 }

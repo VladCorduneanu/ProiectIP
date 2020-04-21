@@ -1,4 +1,4 @@
-﻿namespace VreiSaFiiMiliardar_InRON_
+﻿namespace NView
 {
     partial class GameView
     {
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // GameView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "GameView";
             this.Text = "GameView";
+            this.Load += new System.EventHandler(this.GameView_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

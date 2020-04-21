@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VreiSaFiiMiliardar_InRON_
+namespace NView
 {
     public partial class Menu : Form
     {
@@ -18,6 +18,11 @@ namespace VreiSaFiiMiliardar_InRON_
         }
 
         private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonStartGame_Click(object sender, EventArgs e)
         {
 
         }

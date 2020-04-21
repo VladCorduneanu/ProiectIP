@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VreiSaFiiMiliardar_InRON_
+namespace NView
 {
     public partial class Login : Form
     {

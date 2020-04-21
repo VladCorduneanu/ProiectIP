@@ -8,6 +8,6 @@ namespace Interfaces
 {
     public interface IPresenter
     {
-        void Init(IView view);
+        void Init(IView view, IModelController model);
     }
 }

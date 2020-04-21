@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VreiSaFiiMiliardar_InRON_
+namespace NView
 {
     public partial class GameView : Form
     {
         public GameView()
         {
             InitializeComponent();
+        }
+
+        private void GameView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

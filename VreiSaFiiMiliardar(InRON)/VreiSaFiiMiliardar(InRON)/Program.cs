@@ -1,4 +1,7 @@
 ﻿using Interfaces;
+using NModelController;
+using NPresenter;
+using NView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +19,13 @@ namespace VreiSaFiiMiliardar_InRON_
         static void Main()
         {
             Console.WriteLine("Application STARTED");
-            IView viewer = new View();
-            viewer.StartProgram();
+
+            IModelController model = new ModelController();
+            IView viewer = new NView.View();
+            IPresenter presenter = new Presenter(viewer,model);
+
+            viewer.SetPresenter(presenter);
+            viewer.StartApplication();
         }
     }
 }
