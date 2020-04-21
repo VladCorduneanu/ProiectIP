@@ -26,6 +26,7 @@ namespace VreiSaFiiMiliardar_InRON_
 
             viewer.SetPresenter(presenter);
             viewer.StartApplication();
+
         }
     }
 }

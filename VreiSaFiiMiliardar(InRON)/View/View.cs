@@ -16,6 +16,9 @@ namespace NView
         private Form _login;
         private Form _menu;
         private Form _gameView;
+        private Form _evolution;
+        private Form _gameEnded;
+        private Form _settings;
 
         // Presenter reference
         private IPresenter _presenter;

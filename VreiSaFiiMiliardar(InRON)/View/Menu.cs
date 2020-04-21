@@ -26,5 +26,15 @@ namespace NView
         {
 
         }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Application.Exit();         
+        }
     }
 }
