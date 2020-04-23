@@ -18,7 +18,7 @@ namespace NView
         {
             _viewer = viewer;
             InitializeComponent();
-
+            groupBoxSingUp.Visible = false;
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -36,5 +36,30 @@ namespace NView
             Application.Exit();
         }
 
+     
+
+        private void groupBoxLogIn_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSignUpBack_Click(object sender, EventArgs e)
+        {
+            groupBoxLogIn.Visible = true;
+            groupBoxSingUp.Visible = false;
+        }
+
+        private void groupBoxSingUp_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSingUpLogIn_Click(object sender, EventArgs e)
+        {
+            groupBoxSingUp.Visible = true;
+           // groupBoxLogIn.Visible = false;
+            
+           
+        }
     }
 }

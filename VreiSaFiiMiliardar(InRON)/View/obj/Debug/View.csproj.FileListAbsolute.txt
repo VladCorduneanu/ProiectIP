@@ -24,3 +24,4 @@ E:\Ip_Git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.csproj.CoreCompileInputs
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.csproj.CopyComplete
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.dll
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.pdb
+E:\Ip_Git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Properties.Resources.resources
