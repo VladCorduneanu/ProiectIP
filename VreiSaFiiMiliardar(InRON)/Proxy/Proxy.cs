@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace NProxy
 {
     public class Proxy : IProxy
     {
         private IModelController _modelController;
-
+        private string _encryptionKey = "cheie";
         private UserModel _currentUser;
 
         public Proxy(IModelController modelController)
@@ -20,7 +21,9 @@ namespace NProxy
         public UserModel AddUser(string username, string password)
         {
             int dummyId = 0;
-            UserModel user = new UserModel(dummyId, username, password, "0");
+            string encryptedPassword = Cryptography.Encrypt(password, _encryptionKey);
+
+            UserModel user = new UserModel(dummyId, username, encryptedPassword, "0");
             _modelController.UserDAO().InsertUser(user);
 
             return user;
@@ -34,8 +37,9 @@ namespace NProxy
         public UserModel Login(string username, string password)
         {
             UserModel user =_modelController.UserDAO().GetUser(username);
+            string encryptedPassword = Cryptography.Encrypt(password, _encryptionKey);
 
-            if (user != null && user.Password == password)
+            if (user != null && user.Password == encryptedPassword)
             {
                 _currentUser = user;
                 return user;
