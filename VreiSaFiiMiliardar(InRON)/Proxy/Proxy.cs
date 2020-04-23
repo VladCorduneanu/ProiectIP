@@ -21,7 +21,7 @@ namespace NProxy
         {
             int dummyId = 0;
             UserModel user = new UserModel(dummyId, username, password, "0");
-
+            _modelController.UserDAO().InsertUser(user);
 
             return user;
         }
@@ -39,6 +39,10 @@ namespace NProxy
             {
                 _currentUser = user;
                 return user;
+            }
+            else if(user == null)
+            {
+                AddUser(username, password);
             }
 
             return null;
