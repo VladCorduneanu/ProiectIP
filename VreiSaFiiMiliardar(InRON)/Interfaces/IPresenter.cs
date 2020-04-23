@@ -9,5 +9,6 @@ namespace Interfaces
     public interface IPresenter
     {
         void Init(IView view, IModelController model);
+        void Login(string username, string password);
     }
 }

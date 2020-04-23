@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,10 +11,12 @@ using System.Windows.Forms;
 
 namespace NView
 {
-    public partial class GameView : Form
+    public partial class GameView : System.Windows.Forms.Form
     {
-        public GameView()
+        IView _viewer;
+        public GameView(IView viewer)
         {
+            _viewer = viewer;
             InitializeComponent();
         }
 

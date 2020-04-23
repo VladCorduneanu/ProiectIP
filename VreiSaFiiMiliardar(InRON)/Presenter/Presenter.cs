@@ -23,5 +23,21 @@ namespace NPresenter
             _model = model;
 
         }
+
+        public void Login(string username, string password)
+        {
+            UserModel user = _model.Proxy().Login(username, password);
+
+            if(user != null)
+            {
+                _view.AfterLogin(user);
+                //logare cu succes
+            }
+            else
+            {
+                _view.LoginFailed();
+                //login failed
+            }
+        }
     }
 }

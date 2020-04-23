@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,10 +11,12 @@ using System.Windows.Forms;
 
 namespace NView
 {
-    public partial class Menu : Form
+    public partial class Menu : System.Windows.Forms.Form
     {
-        public Menu()
+        IView _viewer;
+        public Menu(IView viewer)
         {
+            _viewer = viewer;
             InitializeComponent();
         }
 

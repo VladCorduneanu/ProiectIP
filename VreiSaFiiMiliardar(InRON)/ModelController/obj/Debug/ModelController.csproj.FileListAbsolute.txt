@@ -32,3 +32,7 @@ E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\System.Data.SQLite
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\DatabaseAcces.dll.config
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\System.Data.SQLite.xml
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\System.Data.SQLite.dll.config
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\DatabaseAcces.dll.config
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\System.Data.SQLite.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\System.Data.SQLite.xml
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\System.Data.SQLite.dll.config

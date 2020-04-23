@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,10 +11,12 @@ using System.Windows.Forms;
 
 namespace NView
 {
-    public partial class Login : Form
+    public partial class Login : System.Windows.Forms.Form
     {
-        public Login()
+        IView _viewer;
+        public Login(IView viewer)
         {
+            _viewer = viewer;
             InitializeComponent();
 
         }
@@ -25,13 +28,8 @@ namespace NView
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-
-            //TODO Apelarea unei functii din presenter
-            Menu menu = new Menu();
-            this.Hide();
-            menu.Show();
-            
-           
+            _viewer.Login(textBoxUsername.Text, textBoxPassword.Text);
+        
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {

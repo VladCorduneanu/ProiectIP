@@ -8,13 +8,15 @@ using System.Data.SQLite;
 
 namespace DatabaseAcces
 {
-    class UserDAOService : IUserDAO
+    public class UserDAOService : IUserDAO
     {
         private string _path;
+        private IModelController _modelController;
 
-        public UserDAOService(string path)
+        public UserDAOService(IModelController modelController, string path)
         {
-            this._path = path;
+            _modelController = modelController;
+            _path = path;
         }
 
         private SQLiteConnection CreateConnection()

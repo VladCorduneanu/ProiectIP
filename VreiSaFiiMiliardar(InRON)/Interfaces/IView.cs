@@ -15,5 +15,8 @@ namespace Interfaces
         bool Init();
         void SetPresenter(IPresenter presenter);
         bool StartApplication();
+        void Login(string username, string password);
+        void AfterLogin(UserModel user);
+        void LoginFailed();
     }
 }

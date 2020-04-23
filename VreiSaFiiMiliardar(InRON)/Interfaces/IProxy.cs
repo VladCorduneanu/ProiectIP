@@ -8,5 +8,10 @@ namespace Interfaces
 {
     public interface IProxy
     {
+        UserModel Login(string username, string password);
+        UserModel AddUser(string username, string password);
+        bool UpdateUser(UserModel user);
+        UserModel GetCurrentUser();
+        
     }
 }

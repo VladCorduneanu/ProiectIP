@@ -10,10 +10,12 @@ namespace DatabaseAcces
     public class QuestionDAOService: IQuestionDAO
     {
         private string _path;
+        private IModelController _modelController;
 
-        public QuestionDAOService(string path)
+        public QuestionDAOService(IModelController modelController, string path)
         {
-            this._path = path;
+            _modelController = modelController;
+            _path = path;
         }
 
         private SQLiteConnection CreateConnection()

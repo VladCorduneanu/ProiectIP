@@ -23,11 +23,16 @@ namespace NView
         // Presenter reference
         private IPresenter _presenter;
 
-
         public View()
         {
             Console.WriteLine("View has been created");
             Init();
+        }
+
+        public void AfterLogin(UserModel user)
+        {
+            _login.Hide();
+            _menu.Show();
         }
 
         public bool Init()
@@ -37,9 +42,9 @@ namespace NView
 
             // Forms creation
 
-            _login = new Login();
-            _menu = new Menu();
-            _gameView = new GameView();
+            _login = new Login(this);
+            _menu = new Menu(this);
+            _gameView = new GameView(this);
             Console.WriteLine("View::StartProgram() : Forms have been initialised");
 
             // Running the app
@@ -47,7 +52,17 @@ namespace NView
             
             return true;
         }
-    
+
+        public void Login(string username, string password)
+        {
+            _presenter.Login(username, password);
+        }
+
+        public void LoginFailed()
+        {
+            //Afisare ca nu a mers login
+        }
+
         public void SetPresenter(IPresenter presenter)
         {
             _presenter = presenter;

@@ -9,5 +9,11 @@ namespace NGameModel
 {
     public class GameModel:IGameModel
     {
+        private IModelController _modelController;
+
+        public GameModel(IModelController modelController)
+        {
+            _modelController = modelController;
+        }
     }
 }
