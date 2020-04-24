@@ -57,6 +57,7 @@
             this.labelAnswerD = new System.Windows.Forms.Label();
             this.labelTimer = new System.Windows.Forms.Label();
             this.timerQuestion = new System.Windows.Forms.Timer(this.components);
+            this.timerResponse = new System.Windows.Forms.Timer(this.components);
             this.groupBoxMoneyBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +99,7 @@
             this.labelCallFriend.TabIndex = 36;
             this.labelCallFriend.Text = "CallFriend";
             this.labelCallFriend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCallFriend.Click += new System.EventHandler(this.labelCallFriend_Click);
             // 
             // labelPublic
             // 
@@ -108,6 +110,7 @@
             this.labelPublic.TabIndex = 35;
             this.labelPublic.Text = "Public";
             this.labelPublic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelPublic.Click += new System.EventHandler(this.labelPublic_Click);
             // 
             // labelFiftyFifty
             // 
@@ -118,6 +121,7 @@
             this.labelFiftyFifty.TabIndex = 34;
             this.labelFiftyFifty.Text = "Fifty Fifty";
             this.labelFiftyFifty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelFiftyFifty.Click += new System.EventHandler(this.labelFiftyFifty_Click);
             // 
             // labelMoney10
             // 
@@ -142,7 +146,7 @@
             this.labelMoney1.Name = "labelMoney1";
             this.labelMoney1.Size = new System.Drawing.Size(286, 18);
             this.labelMoney1.TabIndex = 32;
-            this.labelMoney1.Text = "2.                                            300lei";
+            this.labelMoney1.Text = "2.                                            200lei";
             this.labelMoney1.UseMnemonic = false;
             // 
             // labelMoney7
@@ -355,49 +359,53 @@
             // 
             this.labelAnswerA.BackColor = System.Drawing.Color.Transparent;
             this.labelAnswerA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAnswerA.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelAnswerA.ForeColor = System.Drawing.Color.White;
             this.labelAnswerA.Location = new System.Drawing.Point(66, 493);
             this.labelAnswerA.Name = "labelAnswerA";
             this.labelAnswerA.Size = new System.Drawing.Size(240, 26);
             this.labelAnswerA.TabIndex = 4;
             this.labelAnswerA.Text = "labelAnswerA";
             this.labelAnswerA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelAnswerA.Click += new System.EventHandler(this.labelAnswerA_Click);
             // 
             // labelAnswerB
             // 
             this.labelAnswerB.BackColor = System.Drawing.Color.Transparent;
             this.labelAnswerB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAnswerB.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelAnswerB.ForeColor = System.Drawing.Color.White;
             this.labelAnswerB.Location = new System.Drawing.Point(66, 546);
             this.labelAnswerB.Name = "labelAnswerB";
             this.labelAnswerB.Size = new System.Drawing.Size(240, 26);
             this.labelAnswerB.TabIndex = 5;
             this.labelAnswerB.Text = "labelAnswerB";
             this.labelAnswerB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelAnswerB.Click += new System.EventHandler(this.labelAnswerB_Click);
             // 
             // labelAnswerC
             // 
             this.labelAnswerC.BackColor = System.Drawing.Color.Transparent;
             this.labelAnswerC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAnswerC.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelAnswerC.ForeColor = System.Drawing.Color.White;
             this.labelAnswerC.Location = new System.Drawing.Point(387, 493);
             this.labelAnswerC.Name = "labelAnswerC";
             this.labelAnswerC.Size = new System.Drawing.Size(251, 26);
             this.labelAnswerC.TabIndex = 6;
             this.labelAnswerC.Text = "labelAnswerC";
             this.labelAnswerC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelAnswerC.Click += new System.EventHandler(this.labelAnswerC_Click);
             // 
             // labelAnswerD
             // 
             this.labelAnswerD.BackColor = System.Drawing.Color.Transparent;
             this.labelAnswerD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAnswerD.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelAnswerD.ForeColor = System.Drawing.Color.White;
             this.labelAnswerD.Location = new System.Drawing.Point(387, 546);
             this.labelAnswerD.Name = "labelAnswerD";
             this.labelAnswerD.Size = new System.Drawing.Size(240, 26);
             this.labelAnswerD.TabIndex = 7;
             this.labelAnswerD.Text = "labelAnswerD";
             this.labelAnswerD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelAnswerD.Click += new System.EventHandler(this.labelAnswerD_Click);
             // 
             // labelTimer
             // 
@@ -416,6 +424,11 @@
             // 
             this.timerQuestion.Interval = 1000;
             this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
+            // 
+            // timerResponse
+            // 
+            this.timerResponse.Interval = 3000;
+            this.timerResponse.Tick += new System.EventHandler(this.timerResponse_Tick);
             // 
             // GameView
             // 
@@ -476,5 +489,6 @@
         private System.Windows.Forms.Label labelFiftyFifty;
         private System.Windows.Forms.Label labelTimer;
         private System.Windows.Forms.Timer timerQuestion;
+        private System.Windows.Forms.Timer timerResponse;
     }
 }

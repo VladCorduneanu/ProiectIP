@@ -51,5 +51,11 @@ namespace View
         {
             _viewer.GoToMenu();
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }

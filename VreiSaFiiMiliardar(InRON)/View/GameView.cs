@@ -15,15 +15,13 @@ namespace NView
     {
         IView _viewer;
         private string _correctAnswer;
+        private bool _nextQuestion;
         private int _secondsRemaining;
         public GameView(IView viewer)
         {
             _viewer = viewer;
             InitializeComponent();
-            labelHelp.Text = "Salut. Stii regulile,\n sunt simple: 15 intrebari," +
-                             "\n30 de secunde intrebarea.\n Nu uita, ai parte si de ajutor\n" +
-                             "Apasa start pentru a incepe.";
-            DeactivateStartGame();
+            
         }
 
         public void DeactivateStartGame()
@@ -61,7 +59,12 @@ namespace NView
 
         private void GameView_Load(object sender, EventArgs e)
         {
-
+            
+            //InitializeComponent();
+            labelHelp.Text = "Salut. Stii regulile,\n sunt simple: 15 intrebari," +
+                             "\n30 de secunde intrebarea.\n Nu uita, ai parte si de ajutor\n" +
+                             "Apasa start pentru a incepe.";
+            DeactivateStartGame();
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -76,18 +79,26 @@ namespace NView
         private void buttonStart_Click(object sender, EventArgs e)
         {
 
-
             BackgroundImage = global::View.Properties.Resources.in_game_image;
             ActivateStartGame();
+            NewQuestion();
 
+        }
+
+        private void NewQuestion()
+        {
             QuestionModel question = _viewer.GetQuestion();
-            if(question != null)
+            if (question != null)
             {
                 labelQuestion.Text = question.Question;
                 labelAnswerA.Text = question.AnswerA;
                 labelAnswerB.Text = question.AnswerB;
                 labelAnswerC.Text = question.AnswerC;
                 labelAnswerD.Text = question.AnswerD;
+                labelAnswerA.ForeColor = Color.White;
+                labelAnswerB.ForeColor = Color.White;
+                labelAnswerC.ForeColor = Color.White;
+                labelAnswerD.ForeColor = Color.White;
                 _correctAnswer = question.CorrectAnswer;
 
                 _secondsRemaining = 30;
@@ -96,14 +107,12 @@ namespace NView
 
                 labelTimer.Text = "30";
                 labelTimer.ForeColor = Color.Green;
-            
+
             }
             else
             {
-                 // eroare
+                // eroare
             }
-
-
         }
 
         private void timerQuestion_Tick(object sender, EventArgs e)
@@ -124,6 +133,124 @@ namespace NView
                 _viewer.SetGameWon(false);
                 _viewer.GoToGameEnd();
             }
+        }
+
+        private void QuestionResponse()
+        {
+            switch (_correctAnswer)
+            {
+                case "A":
+                    labelAnswerA.ForeColor = Color.Green;
+                    break;
+                case "B":
+                    labelAnswerB.ForeColor = Color.Green;
+                    break;
+                case "C":
+                    labelAnswerC.ForeColor = Color.Green;
+                    break;
+                case "D":
+                    labelAnswerD.ForeColor = Color.Green;
+                    break;
+
+            }
+            timerQuestion.Enabled = false;
+            timerResponse.Interval = 3000;
+            timerResponse.Enabled = true;
+        }
+
+        private void labelAnswerA_Click(object sender, EventArgs e)
+        {
+            if (_correctAnswer == "A")
+            {
+                _nextQuestion = true;
+                
+            }
+            else
+            {
+                labelAnswerA.ForeColor = Color.Red;
+                _nextQuestion = false;
+            }
+
+            QuestionResponse();
+
+        }
+
+        private void labelAnswerC_Click(object sender, EventArgs e)
+        {
+            if (_correctAnswer == "C")
+            {
+                _nextQuestion = true;
+
+            }
+            else
+            {
+                labelAnswerC.ForeColor = Color.Red;
+                _nextQuestion = false;
+            }
+
+            QuestionResponse();
+        }
+
+        private void labelAnswerB_Click(object sender, EventArgs e)
+        {
+            if (_correctAnswer == "B")
+            {
+                _nextQuestion = true;
+
+            }
+            else
+            {
+                labelAnswerB.ForeColor = Color.Red;
+                _nextQuestion = false;
+            }
+
+            QuestionResponse();
+        }
+
+        private void labelAnswerD_Click(object sender, EventArgs e)
+        {
+            if (_correctAnswer == "D")
+            {
+                _nextQuestion = true;
+
+            }
+            else
+            {
+                labelAnswerD.ForeColor = Color.Red;
+                _nextQuestion = false;
+            }
+
+            QuestionResponse();
+        }
+
+        private void labelFiftyFifty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPublic_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCallFriend_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timerResponse_Tick(object sender, EventArgs e)
+        {
+            if (_nextQuestion == true)
+            {
+                NewQuestion();
+            }
+            else
+            {
+                _viewer.SetGameWon(false);
+                _viewer.GoToGameEnd();
+            }
+
+            timerResponse.Enabled = false;
         }
     }
 }

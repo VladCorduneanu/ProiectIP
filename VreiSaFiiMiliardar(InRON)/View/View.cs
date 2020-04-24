@@ -75,12 +75,14 @@ namespace NView
         public void GoToGame()
         {
             _menu.Hide();
+            _gameView = new GameView(this);
             _gameView.Show();
         }
 
         public void GoToGameEnd()
         {
             _gameView.Hide();
+            _gameEnd = new GameEnd(this);
             _gameEnd.Show();
         }
 
