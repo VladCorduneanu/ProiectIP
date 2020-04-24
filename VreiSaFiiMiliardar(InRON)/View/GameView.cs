@@ -17,12 +17,17 @@ namespace NView
         private string _correctAnswer;
         private bool _nextQuestion;
         private int _secondsRemaining;
-        private bool fiftyFiftyPressed;
-        private bool callAFriendPressed;
+        private bool _fiftyFiftyPressed;
+        private bool _callAFriendPressed;
+        private bool _publicPressed;
+        private bool _score;
+        private int _currentQuestion;
+        private List<Label> _labels;
         public GameView(IView viewer)
         {
             _viewer = viewer;
             InitializeComponent();
+            _labels = new List<Label>();
 
         }
 
@@ -41,8 +46,9 @@ namespace NView
 
         public void ActivateStartGame()
         {
-            fiftyFiftyPressed = false;
-            callAFriendPressed = false;
+            _publicPressed = false;
+            _fiftyFiftyPressed = false;
+            _callAFriendPressed = false;
             labelTimer.Visible = true;
             labelHelp.Visible = false;
             buttonStart.Visible = false;
@@ -57,6 +63,24 @@ namespace NView
             labelFiftyFifty.Text = "";
             labelCallFriend.Text = "";
             labelPublic.Text = "";
+            _currentQuestion = 0;
+
+            _labels.Add(labelMoney0);
+            _labels.Add(labelMoney1);
+            _labels.Add(labelMoney2);
+            _labels.Add(labelMoney3);
+            _labels.Add(labelMoney4);
+            _labels.Add(labelMoney5);
+            _labels.Add(labelMoney6);
+            _labels.Add(labelMoney7);
+            _labels.Add(labelMoney8);
+            _labels.Add(labelMoney9);
+            _labels.Add(labelMoney10);
+            _labels.Add(labelMoney11);
+            _labels.Add(labelMoney12);
+            _labels.Add(labelMoney13);
+            _labels.Add(labelMoney14);
+            
 
             _viewer.StartGame();
         }
@@ -91,6 +115,20 @@ namespace NView
 
         private void NewQuestion()
         {
+            if (_currentQuestion > 0)
+            {
+                _labels[_currentQuestion].BackColor = Color.Orange;
+                _labels[_currentQuestion].Text = "->" + _labels[_currentQuestion].Text;
+                _labels[_currentQuestion-1].BackColor = Color.Transparent;
+                _labels[_currentQuestion-1].Text = _labels[_currentQuestion-1].Text.Substring(2);
+            }
+            else
+            {
+                _labels[_currentQuestion].BackColor = Color.Orange;
+                _labels[_currentQuestion].Text = "->" + _labels[_currentQuestion].Text;
+            }
+            _currentQuestion++;
+
             QuestionModel question = _viewer.GetQuestion();
             if (question != null)
             {
@@ -119,7 +157,11 @@ namespace NView
             }
             else
             {
-                // eroare
+                timerQuestion.Enabled = false;
+
+                _viewer.SetGameWon(true);
+                _viewer.GoToGameEnd();
+                // terminare joc
             }
         }
 
@@ -249,9 +291,9 @@ namespace NView
 
         private void labelFiftyFifty_Click(object sender, EventArgs e)
         {
-            if (fiftyFiftyPressed)
+            if (_fiftyFiftyPressed)
                 return;
-            fiftyFiftyPressed = true;
+            _fiftyFiftyPressed = true;
             int number = Convert.ToInt32(_correctAnswer[0] - 'A');
             int var;
             Random rand = new Random();
@@ -296,19 +338,85 @@ namespace NView
 
         private void labelPublic_Click(object sender, EventArgs e)
         {
+            if (_publicPressed == true)
+                return;
+            _publicPressed = true;
+
+            Random random = new Random();
+
+            List<int> answers = new List<int>();
+            if(labelAnswerA.Visible == true)
+            {
+                if ("A" == _correctAnswer)
+                    answers.Add(random.Next(7,12));
+                else
+                    answers.Add(random.Next(10));
+            }
+            else
+            {
+                answers.Add(0);
+            }
+            if (labelAnswerB.Visible == true)
+            {
+                if ("B" == _correctAnswer)
+                    answers.Add(random.Next(7, 12));
+                else
+                    answers.Add(random.Next(10));
+            }
+            else
+            {
+                answers.Add(0);
+            }
+            if (labelAnswerC.Visible == true)
+            {
+                if ("C" == _correctAnswer)
+                    answers.Add(random.Next(7, 12));
+                else
+                    answers.Add(random.Next(10));
+            }
+            else
+            {
+                answers.Add(0);
+            }
+            if (labelAnswerD.Visible == true)
+            {
+                if ("D" == _correctAnswer)
+                    answers.Add(random.Next(7, 12));
+                else
+                    answers.Add(random.Next(10));
+            }
+            else
+            {
+                answers.Add(0);
+            }
+
+            int total = 0;
+            foreach(int i in answers)
+            {
+                total += i;
+            }
+            labelAnswerA.Text += "    " + Math.Round(((answers[0] * 100.0) / total),2).ToString() + "%";
+            labelAnswerB.Text += "    " + Math.Round(((answers[1] * 100.0) / total), 2).ToString() + "%";
+            labelAnswerC.Text += "    " + Math.Round(((answers[2] * 100.0) / total), 2).ToString() + "%";
+            labelAnswerD.Text += "    " + Math.Round(((answers[3] * 100.0) / total), 2).ToString() + "%";
+
+            labelPublic.Text = "X";
+            labelPublic.ForeColor = Color.Red;
+            labelPublic.Font = new Font("Consolas", 80.0f, FontStyle.Bold);
+            labelPublic.Location = new Point(130, 48);
 
         }
 
         private void labelCallFriend_Click(object sender, EventArgs e)
         {
-            if (callAFriendPressed == true)
+            if (_callAFriendPressed == true)
                 return;
-            callAFriendPressed = true;
+            _callAFriendPressed = true;
             Random rand = new Random();
             int value = rand.Next(4);
             int number = Convert.ToInt32(_correctAnswer[0] - 'A');
 
-            if (fiftyFiftyPressed)
+            if (_fiftyFiftyPressed)
             {
                 switch (_correctAnswer)
                 {

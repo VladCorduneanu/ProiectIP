@@ -47,7 +47,7 @@ namespace NPresenter
             else
             {
                 question = null;
-                // eroare
+                // s-au term intrebarile
             }
             _currentQuestion++;
 
