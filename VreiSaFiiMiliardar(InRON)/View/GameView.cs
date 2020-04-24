@@ -99,6 +99,10 @@ namespace NView
                 labelAnswerB.ForeColor = Color.White;
                 labelAnswerC.ForeColor = Color.White;
                 labelAnswerD.ForeColor = Color.White;
+                labelAnswerA.Visible = true;
+                labelAnswerB.Visible = true;
+                labelAnswerC.Visible = true;
+                labelAnswerD.Visible = true;
                 _correctAnswer = question.CorrectAnswer;
 
                 _secondsRemaining = 30;
@@ -174,6 +178,21 @@ namespace NView
             QuestionResponse();
 
         }
+        private void labelAnswerB_Click(object sender, EventArgs e)
+        {
+            if (_correctAnswer == "B")
+            {
+                _nextQuestion = true;
+
+            }
+            else
+            {
+                labelAnswerB.ForeColor = Color.Red;
+                _nextQuestion = false;
+            }
+
+            QuestionResponse();
+        }
 
         private void labelAnswerC_Click(object sender, EventArgs e)
         {
@@ -191,21 +210,6 @@ namespace NView
             QuestionResponse();
         }
 
-        private void labelAnswerB_Click(object sender, EventArgs e)
-        {
-            if (_correctAnswer == "B")
-            {
-                _nextQuestion = true;
-
-            }
-            else
-            {
-                labelAnswerB.ForeColor = Color.Red;
-                _nextQuestion = false;
-            }
-
-            QuestionResponse();
-        }
 
         private void labelAnswerD_Click(object sender, EventArgs e)
         {
@@ -223,20 +227,6 @@ namespace NView
             QuestionResponse();
         }
 
-        private void labelFiftyFifty_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelPublic_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelCallFriend_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void timerResponse_Tick(object sender, EventArgs e)
         {
@@ -252,5 +242,48 @@ namespace NView
 
             timerResponse.Enabled = false;
         }
+
+        private void labelFiftyFifty_Click(object sender, EventArgs e)
+        {
+            int number = Convert.ToInt32(_correctAnswer[0] - 'A');
+            int var;
+            Random rand = new Random();
+            int i = 0;
+            while (i < 2)
+            {
+                var = rand.Next(4);
+                if (var == number)
+                    continue;
+                switch (var)
+                {
+                    case 0:
+                        labelAnswerA.Visible = false;
+                        break;
+                    case 1:
+                        labelAnswerB.Visible = false;
+                        break;
+                    case 2:
+                        labelAnswerC.Visible = false;
+                        break;
+                    case 3:
+                        labelAnswerD.Visible = false;
+                        break;
+
+                }
+                i++;
+
+            }
+        }
+
+        private void labelPublic_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCallFriend_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }
