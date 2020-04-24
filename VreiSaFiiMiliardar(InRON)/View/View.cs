@@ -18,9 +18,11 @@ namespace NView
         private Form _signup;
         private Form _menu;
         private Form _gameView;
+        private Form _gameEnd;
         private Form _evolution;
-        private Form _gameEnded;
         private Form _settings;
+
+        private bool _gameWon;
 
         // Presenter reference
         private IPresenter _presenter;
@@ -31,11 +33,31 @@ namespace NView
             Init();
         }
 
+        public bool Init()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            // Forms creation
+
+            _login = new Login(this);
+            _menu = new Menu(this);
+            _gameView = new GameView(this);
+            _gameEnd = new GameEnd(this);
+            _signup = new SignUp(this);
+            Console.WriteLine("View::StartProgram() : Forms have been initialised");
+
+            // Running the app
+            Console.WriteLine("View::StartProgram() : Running application");
+
+            return true;
+        }
 
         public void GoToMenu()
         {
             _login.Hide();
             _signup.Hide();
+            _gameEnd.Hide();
             _menu.Show();
         }
 
@@ -56,23 +78,10 @@ namespace NView
             _gameView.Show();
         }
 
-        public bool Init()
+        public void GoToGameEnd()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            // Forms creation
-
-            _login = new Login(this);
-            _menu = new Menu(this);
-            _gameView = new GameView(this);
-            _signup = new SignUp(this);
-            Console.WriteLine("View::StartProgram() : Forms have been initialised");
-
-            // Running the app
-            Console.WriteLine("View::StartProgram() : Running application");
-            
-            return true;
+            _gameView.Hide();
+            _gameEnd.Show();
         }
 
         public bool Login(string username, string password)
@@ -80,7 +89,7 @@ namespace NView
             bool result = _presenter.Login(username, password);
             if (result)
             {
-                this.GoToMenu();
+                GoToMenu();
             }
             return result;
         }
@@ -103,7 +112,7 @@ namespace NView
             bool result = _presenter.SignUp(username, password);
             if (result)
             {
-                this.GoToMenu();
+                GoToMenu();
             }
             return result;
         }
@@ -116,6 +125,15 @@ namespace NView
         public QuestionModel GetQuestion()
         {
             return _presenter.GetQuestion();
+        }
+
+        bool IView.GetGameWon()
+        {
+            return _gameWon;
+        }
+        void IView.SetGameWon(bool value)
+        {
+            _gameWon = value;
         }
     }
 }

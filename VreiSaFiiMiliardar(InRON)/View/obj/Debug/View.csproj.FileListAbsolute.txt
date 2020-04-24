@@ -42,3 +42,4 @@ E:\Proiect_ip_git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.csprojAssemblyRe
 E:\Proiect_ip_git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.SignUp.resources
 D:\Facultate\ProiectIP\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Properties.Resources.resources
 D:\Facultate\ProiectIP\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.SignUp.resources
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.GameEnd.resources

@@ -120,7 +120,9 @@ namespace NView
             else
             {
                 timerQuestion.Enabled = false;
-                // TODO
+
+                _viewer.SetGameWon(false);
+                _viewer.GoToGameEnd();
             }
         }
     }
