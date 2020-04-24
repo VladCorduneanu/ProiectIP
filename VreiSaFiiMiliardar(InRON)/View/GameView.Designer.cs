@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameView));
+            this.components = new System.ComponentModel.Container();
             this.groupBoxMoneyBar = new System.Windows.Forms.GroupBox();
             this.labelMoney10 = new System.Windows.Forms.Label();
             this.labelMoney1 = new System.Windows.Forms.Label();
@@ -47,6 +47,16 @@
             this.labelMoney0 = new System.Windows.Forms.Label();
             this.labelHelp = new System.Windows.Forms.Label();
             this.buttonStart = new System.Windows.Forms.Button();
+            this.labelQuestion = new System.Windows.Forms.Label();
+            this.labelAnswerA = new System.Windows.Forms.Label();
+            this.labelAnswerB = new System.Windows.Forms.Label();
+            this.labelAnswerC = new System.Windows.Forms.Label();
+            this.labelAnswerD = new System.Windows.Forms.Label();
+            this.labelFiftyFifty = new System.Windows.Forms.Label();
+            this.labelPublic = new System.Windows.Forms.Label();
+            this.labelCallFriend = new System.Windows.Forms.Label();
+            this.labelTimer = new System.Windows.Forms.Label();
+            this.timerQuestion = new System.Windows.Forms.Timer(this.components);
             this.groupBoxMoneyBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +64,9 @@
             // 
             this.groupBoxMoneyBar.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxMoneyBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBoxMoneyBar.Controls.Add(this.labelCallFriend);
+            this.groupBoxMoneyBar.Controls.Add(this.labelPublic);
+            this.groupBoxMoneyBar.Controls.Add(this.labelFiftyFifty);
             this.groupBoxMoneyBar.Controls.Add(this.labelMoney10);
             this.groupBoxMoneyBar.Controls.Add(this.labelMoney1);
             this.groupBoxMoneyBar.Controls.Add(this.labelMoney7);
@@ -296,16 +309,132 @@
             this.buttonStart.UseVisualStyleBackColor = false;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
+            // labelQuestion
+            // 
+            this.labelQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.labelQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuestion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelQuestion.Location = new System.Drawing.Point(66, 408);
+            this.labelQuestion.Name = "labelQuestion";
+            this.labelQuestion.Size = new System.Drawing.Size(550, 48);
+            this.labelQuestion.TabIndex = 3;
+            this.labelQuestion.Text = "labelQuestion";
+            this.labelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelAnswerA
+            // 
+            this.labelAnswerA.BackColor = System.Drawing.Color.Transparent;
+            this.labelAnswerA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAnswerA.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelAnswerA.Location = new System.Drawing.Point(66, 493);
+            this.labelAnswerA.Name = "labelAnswerA";
+            this.labelAnswerA.Size = new System.Drawing.Size(240, 26);
+            this.labelAnswerA.TabIndex = 4;
+            this.labelAnswerA.Text = "labelAnswerA";
+            this.labelAnswerA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelAnswerB
+            // 
+            this.labelAnswerB.BackColor = System.Drawing.Color.Transparent;
+            this.labelAnswerB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAnswerB.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelAnswerB.Location = new System.Drawing.Point(66, 546);
+            this.labelAnswerB.Name = "labelAnswerB";
+            this.labelAnswerB.Size = new System.Drawing.Size(240, 26);
+            this.labelAnswerB.TabIndex = 5;
+            this.labelAnswerB.Text = "labelAnswerB";
+            this.labelAnswerB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelAnswerC
+            // 
+            this.labelAnswerC.BackColor = System.Drawing.Color.Transparent;
+            this.labelAnswerC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAnswerC.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelAnswerC.Location = new System.Drawing.Point(387, 493);
+            this.labelAnswerC.Name = "labelAnswerC";
+            this.labelAnswerC.Size = new System.Drawing.Size(251, 26);
+            this.labelAnswerC.TabIndex = 6;
+            this.labelAnswerC.Text = "labelAnswerC";
+            this.labelAnswerC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelAnswerD
+            // 
+            this.labelAnswerD.BackColor = System.Drawing.Color.Transparent;
+            this.labelAnswerD.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAnswerD.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelAnswerD.Location = new System.Drawing.Point(387, 546);
+            this.labelAnswerD.Name = "labelAnswerD";
+            this.labelAnswerD.Size = new System.Drawing.Size(240, 26);
+            this.labelAnswerD.TabIndex = 7;
+            this.labelAnswerD.Text = "labelAnswerD";
+            this.labelAnswerD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelFiftyFifty
+            // 
+            this.labelFiftyFifty.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelFiftyFifty.Location = new System.Drawing.Point(41, 91);
+            this.labelFiftyFifty.Name = "labelFiftyFifty";
+            this.labelFiftyFifty.Size = new System.Drawing.Size(81, 38);
+            this.labelFiftyFifty.TabIndex = 34;
+            this.labelFiftyFifty.Text = "Fifty Fifty";
+            this.labelFiftyFifty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPublic
+            // 
+            this.labelPublic.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelPublic.Location = new System.Drawing.Point(142, 91);
+            this.labelPublic.Name = "labelPublic";
+            this.labelPublic.Size = new System.Drawing.Size(81, 38);
+            this.labelPublic.TabIndex = 35;
+            this.labelPublic.Text = "Public";
+            this.labelPublic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelCallFriend
+            // 
+            this.labelCallFriend.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelCallFriend.Location = new System.Drawing.Point(246, 91);
+            this.labelCallFriend.Name = "labelCallFriend";
+            this.labelCallFriend.Size = new System.Drawing.Size(69, 38);
+            this.labelCallFriend.TabIndex = 36;
+            this.labelCallFriend.Text = "CallFriend";
+            this.labelCallFriend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelTimer
+            // 
+            this.labelTimer.BackColor = System.Drawing.Color.Transparent;
+            this.labelTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTimer.ForeColor = System.Drawing.Color.ForestGreen;
+            this.labelTimer.Location = new System.Drawing.Point(37, 42);
+            this.labelTimer.Name = "labelTimer";
+            this.labelTimer.Size = new System.Drawing.Size(81, 63);
+            this.labelTimer.TabIndex = 8;
+            this.labelTimer.Text = "30";
+            this.labelTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelTimer.Visible = false;
+            // 
+            // timerQuestion
+            // 
+            this.timerQuestion.Interval = 1000;
+            // 
             // GameView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::View.Properties.Resources.start_game_iamge;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1064, 601);
+            this.Controls.Add(this.labelTimer);
+            this.Controls.Add(this.labelAnswerD);
+            this.Controls.Add(this.labelAnswerC);
+            this.Controls.Add(this.labelAnswerB);
+            this.Controls.Add(this.labelAnswerA);
+            this.Controls.Add(this.labelQuestion);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.labelHelp);
             this.Controls.Add(this.groupBoxMoneyBar);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1080, 640);
+            this.MinimumSize = new System.Drawing.Size(1080, 640);
             this.Name = "GameView";
             this.Text = "GameView";
             this.Load += new System.EventHandler(this.GameView_Load);
@@ -336,5 +465,15 @@
         private System.Windows.Forms.Label labelMoney1;
         private System.Windows.Forms.Label labelHelp;
         private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Label labelQuestion;
+        private System.Windows.Forms.Label labelAnswerA;
+        private System.Windows.Forms.Label labelAnswerB;
+        private System.Windows.Forms.Label labelAnswerC;
+        private System.Windows.Forms.Label labelAnswerD;
+        private System.Windows.Forms.Label labelCallFriend;
+        private System.Windows.Forms.Label labelPublic;
+        private System.Windows.Forms.Label labelFiftyFifty;
+        private System.Windows.Forms.Label labelTimer;
+        private System.Windows.Forms.Timer timerQuestion;
     }
 }

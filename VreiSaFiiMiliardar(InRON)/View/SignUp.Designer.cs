@@ -140,6 +140,9 @@
             this.Controls.Add(this.textBoxSignUpPassword);
             this.Controls.Add(this.buttonSignUpBack);
             this.ForeColor = System.Drawing.Color.White;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1080, 640);
+            this.MinimumSize = new System.Drawing.Size(1080, 640);
             this.Name = "SignUp";
             this.Text = "SignUp";
             this.Load += new System.EventHandler(this.SignUp_Load);

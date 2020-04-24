@@ -41,7 +41,7 @@
             this.buttonStartGame.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonStartGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStartGame.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonStartGame.Location = new System.Drawing.Point(112, 130);
+            this.buttonStartGame.Location = new System.Drawing.Point(112, 139);
             this.buttonStartGame.Name = "buttonStartGame";
             this.buttonStartGame.Size = new System.Drawing.Size(211, 42);
             this.buttonStartGame.TabIndex = 0;
@@ -56,7 +56,7 @@
             this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSettings.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonSettings.Location = new System.Drawing.Point(112, 203);
+            this.buttonSettings.Location = new System.Drawing.Point(112, 210);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Size = new System.Drawing.Size(211, 42);
             this.buttonSettings.TabIndex = 1;
@@ -102,6 +102,9 @@
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonSettings);
             this.Controls.Add(this.buttonStartGame);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1080, 640);
+            this.MinimumSize = new System.Drawing.Size(1080, 640);
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);

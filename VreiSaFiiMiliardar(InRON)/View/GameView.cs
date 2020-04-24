@@ -21,6 +21,38 @@ namespace NView
             labelHelp.Text = "Salut. Stii regulile,\n sunt simple: 15 intrebari," +
                              "\n30 de secunde intrebarea.\n Nu uita, ai parte si de ajutor\n" +
                              "Apasa start pentru a incepe.";
+            DeactivateStartGame();
+        }
+
+        public void DeactivateStartGame()
+        {
+            labelAnswerA.Visible = false;
+            labelAnswerB.Visible = false;
+            labelAnswerC.Visible = false;
+            labelAnswerD.Visible = false;
+            labelQuestion.Visible = false;
+            labelFiftyFifty.Visible = false;
+            labelCallFriend.Visible = false;
+            labelPublic.Visible = false;
+            labelTimer.Visible = false;
+        }
+
+        public void ActivateStartGame()
+        {
+            labelTimer.Visible = true;
+            labelHelp.Visible = false;
+            buttonStart.Visible = false;
+            labelAnswerA.Visible = true;
+            labelAnswerB.Visible = true;
+            labelAnswerC.Visible = true;
+            labelAnswerD.Visible = true;
+            labelQuestion.Visible = true;
+            labelFiftyFifty.Visible = true;
+            labelCallFriend.Visible = true;
+            labelPublic.Visible = true;
+            labelFiftyFifty.Text = "";
+            labelCallFriend.Text = "";
+            labelPublic.Text = "";
         }
 
         private void GameView_Load(object sender, EventArgs e)
@@ -42,8 +74,8 @@ namespace NView
 
 
             this.BackgroundImage = global::View.Properties.Resources.in_game_image;
-            labelHelp.Visible = false;
-            buttonStart.Visible = false;
+            ActivateStartGame();
+            
 
 
         }

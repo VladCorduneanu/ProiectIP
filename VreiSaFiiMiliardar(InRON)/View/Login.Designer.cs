@@ -118,6 +118,9 @@
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelPassword);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1080, 640);
+            this.MinimumSize = new System.Drawing.Size(1080, 640);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
