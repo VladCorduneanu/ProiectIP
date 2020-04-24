@@ -11,5 +11,7 @@ namespace Interfaces
         void Init(IView view, IModelController model);
         bool Login(string username, string password);
         bool SignUp(string username, string password);
+        void StartGame();
+        QuestionModel GetQuestion();
     }
 }

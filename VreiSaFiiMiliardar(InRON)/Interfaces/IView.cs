@@ -21,6 +21,8 @@ namespace Interfaces
         void GoToLogIn();
         void GoToMenu();
         void GoToGame();
+        void StartGame();
+        QuestionModel GetQuestion();
 
     }
 }

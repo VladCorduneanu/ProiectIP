@@ -14,6 +14,8 @@ namespace NView
     public partial class GameView : System.Windows.Forms.Form
     {
         IView _viewer;
+        private string _correctAnswer;
+        private int _secondsRemaining;
         public GameView(IView viewer)
         {
             _viewer = viewer;
@@ -53,6 +55,8 @@ namespace NView
             labelFiftyFifty.Text = "";
             labelCallFriend.Text = "";
             labelPublic.Text = "";
+
+            _viewer.StartGame();
         }
 
         private void GameView_Load(object sender, EventArgs e)
@@ -73,11 +77,51 @@ namespace NView
         {
 
 
-            this.BackgroundImage = global::View.Properties.Resources.in_game_image;
+            BackgroundImage = global::View.Properties.Resources.in_game_image;
             ActivateStartGame();
+
+            QuestionModel question = _viewer.GetQuestion();
+            if(question != null)
+            {
+                labelQuestion.Text = question.Question;
+                labelAnswerA.Text = question.AnswerA;
+                labelAnswerB.Text = question.AnswerB;
+                labelAnswerC.Text = question.AnswerC;
+                labelAnswerD.Text = question.AnswerD;
+                _correctAnswer = question.CorrectAnswer;
+
+                _secondsRemaining = 30;
+                timerQuestion.Interval = 1000;
+                timerQuestion.Enabled = true;
+
+                labelTimer.Text = "30";
+                labelTimer.ForeColor = Color.Green;
             
+            }
+            else
+            {
+                 // eroare
+            }
 
 
+        }
+
+        private void timerQuestion_Tick(object sender, EventArgs e)
+        {
+            _secondsRemaining--;
+            if(_secondsRemaining > 0)
+            {
+                labelTimer.Text = _secondsRemaining.ToString();
+                if(_secondsRemaining < 6)
+                {
+                    labelTimer.ForeColor = Color.Red;
+                }
+            }
+            else
+            {
+                timerQuestion.Enabled = false;
+                // TODO
+            }
         }
     }
 }

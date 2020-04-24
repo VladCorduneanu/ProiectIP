@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBoxMoneyBar = new System.Windows.Forms.GroupBox();
+            this.labelCallFriend = new System.Windows.Forms.Label();
+            this.labelPublic = new System.Windows.Forms.Label();
+            this.labelFiftyFifty = new System.Windows.Forms.Label();
             this.labelMoney10 = new System.Windows.Forms.Label();
             this.labelMoney1 = new System.Windows.Forms.Label();
             this.labelMoney7 = new System.Windows.Forms.Label();
@@ -52,9 +55,6 @@
             this.labelAnswerB = new System.Windows.Forms.Label();
             this.labelAnswerC = new System.Windows.Forms.Label();
             this.labelAnswerD = new System.Windows.Forms.Label();
-            this.labelFiftyFifty = new System.Windows.Forms.Label();
-            this.labelPublic = new System.Windows.Forms.Label();
-            this.labelCallFriend = new System.Windows.Forms.Label();
             this.labelTimer = new System.Windows.Forms.Label();
             this.timerQuestion = new System.Windows.Forms.Timer(this.components);
             this.groupBoxMoneyBar.SuspendLayout();
@@ -88,6 +88,36 @@
             this.groupBoxMoneyBar.Size = new System.Drawing.Size(406, 655);
             this.groupBoxMoneyBar.TabIndex = 0;
             this.groupBoxMoneyBar.TabStop = false;
+            // 
+            // labelCallFriend
+            // 
+            this.labelCallFriend.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelCallFriend.Location = new System.Drawing.Point(246, 91);
+            this.labelCallFriend.Name = "labelCallFriend";
+            this.labelCallFriend.Size = new System.Drawing.Size(69, 38);
+            this.labelCallFriend.TabIndex = 36;
+            this.labelCallFriend.Text = "CallFriend";
+            this.labelCallFriend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPublic
+            // 
+            this.labelPublic.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelPublic.Location = new System.Drawing.Point(142, 91);
+            this.labelPublic.Name = "labelPublic";
+            this.labelPublic.Size = new System.Drawing.Size(81, 38);
+            this.labelPublic.TabIndex = 35;
+            this.labelPublic.Text = "Public";
+            this.labelPublic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelFiftyFifty
+            // 
+            this.labelFiftyFifty.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelFiftyFifty.Location = new System.Drawing.Point(41, 91);
+            this.labelFiftyFifty.Name = "labelFiftyFifty";
+            this.labelFiftyFifty.Size = new System.Drawing.Size(81, 38);
+            this.labelFiftyFifty.TabIndex = 34;
+            this.labelFiftyFifty.Text = "Fifty Fifty";
+            this.labelFiftyFifty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelMoney10
             // 
@@ -369,36 +399,6 @@
             this.labelAnswerD.Text = "labelAnswerD";
             this.labelAnswerD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelFiftyFifty
-            // 
-            this.labelFiftyFifty.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelFiftyFifty.Location = new System.Drawing.Point(41, 91);
-            this.labelFiftyFifty.Name = "labelFiftyFifty";
-            this.labelFiftyFifty.Size = new System.Drawing.Size(81, 38);
-            this.labelFiftyFifty.TabIndex = 34;
-            this.labelFiftyFifty.Text = "Fifty Fifty";
-            this.labelFiftyFifty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelPublic
-            // 
-            this.labelPublic.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelPublic.Location = new System.Drawing.Point(142, 91);
-            this.labelPublic.Name = "labelPublic";
-            this.labelPublic.Size = new System.Drawing.Size(81, 38);
-            this.labelPublic.TabIndex = 35;
-            this.labelPublic.Text = "Public";
-            this.labelPublic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelCallFriend
-            // 
-            this.labelCallFriend.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelCallFriend.Location = new System.Drawing.Point(246, 91);
-            this.labelCallFriend.Name = "labelCallFriend";
-            this.labelCallFriend.Size = new System.Drawing.Size(69, 38);
-            this.labelCallFriend.TabIndex = 36;
-            this.labelCallFriend.Text = "CallFriend";
-            this.labelCallFriend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // labelTimer
             // 
             this.labelTimer.BackColor = System.Drawing.Color.Transparent;
@@ -415,6 +415,7 @@
             // timerQuestion
             // 
             this.timerQuestion.Interval = 1000;
+            this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
             // 
             // GameView
             // 

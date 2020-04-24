@@ -107,5 +107,15 @@ namespace NView
             }
             return result;
         }
+
+        public void StartGame()
+        {
+            _presenter.StartGame();
+        }
+
+        public QuestionModel GetQuestion()
+        {
+            return _presenter.GetQuestion();
+        }
     }
 }
