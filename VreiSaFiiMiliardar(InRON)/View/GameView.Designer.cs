@@ -92,19 +92,23 @@
             // 
             // labelCallFriend
             // 
+            this.labelCallFriend.AutoSize = true;
             this.labelCallFriend.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labelCallFriend.Location = new System.Drawing.Point(246, 91);
+            this.labelCallFriend.MinimumSize = new System.Drawing.Size(69, 38);
             this.labelCallFriend.Name = "labelCallFriend";
             this.labelCallFriend.Size = new System.Drawing.Size(69, 38);
             this.labelCallFriend.TabIndex = 36;
-            this.labelCallFriend.Text = "CallFriend";
+            this.labelCallFriend.Text = "X";
             this.labelCallFriend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelCallFriend.Click += new System.EventHandler(this.labelCallFriend_Click);
             // 
             // labelPublic
             // 
+            this.labelPublic.AutoSize = true;
             this.labelPublic.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labelPublic.Location = new System.Drawing.Point(142, 91);
+            this.labelPublic.MinimumSize = new System.Drawing.Size(81, 38);
             this.labelPublic.Name = "labelPublic";
             this.labelPublic.Size = new System.Drawing.Size(81, 38);
             this.labelPublic.TabIndex = 35;
@@ -114,8 +118,10 @@
             // 
             // labelFiftyFifty
             // 
+            this.labelFiftyFifty.AutoSize = true;
             this.labelFiftyFifty.ForeColor = System.Drawing.SystemColors.ControlText;
             this.labelFiftyFifty.Location = new System.Drawing.Point(41, 91);
+            this.labelFiftyFifty.MinimumSize = new System.Drawing.Size(81, 38);
             this.labelFiftyFifty.Name = "labelFiftyFifty";
             this.labelFiftyFifty.Size = new System.Drawing.Size(81, 38);
             this.labelFiftyFifty.TabIndex = 34;
@@ -135,6 +141,7 @@
             this.labelMoney10.TabIndex = 33;
             this.labelMoney10.Text = "11.                                       25,000lei";
             this.labelMoney10.UseMnemonic = false;
+            this.labelMoney10.Click += new System.EventHandler(this.labelMoney10_Click);
             // 
             // labelMoney1
             // 

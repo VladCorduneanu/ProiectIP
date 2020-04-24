@@ -17,11 +17,13 @@ namespace NView
         private string _correctAnswer;
         private bool _nextQuestion;
         private int _secondsRemaining;
+        private bool fiftyFiftyPressed;
+        private bool callAFriendPressed;
         public GameView(IView viewer)
         {
             _viewer = viewer;
             InitializeComponent();
-            
+
         }
 
         public void DeactivateStartGame()
@@ -39,6 +41,8 @@ namespace NView
 
         public void ActivateStartGame()
         {
+            fiftyFiftyPressed = false;
+            callAFriendPressed = false;
             labelTimer.Visible = true;
             labelHelp.Visible = false;
             buttonStart.Visible = false;
@@ -59,7 +63,7 @@ namespace NView
 
         private void GameView_Load(object sender, EventArgs e)
         {
-            
+
             //InitializeComponent();
             labelHelp.Text = "Salut. Stii regulile,\n sunt simple: 15 intrebari," +
                              "\n30 de secunde intrebarea.\n Nu uita, ai parte si de ajutor\n" +
@@ -122,10 +126,10 @@ namespace NView
         private void timerQuestion_Tick(object sender, EventArgs e)
         {
             _secondsRemaining--;
-            if(_secondsRemaining > 0)
+            if (_secondsRemaining > 0)
             {
                 labelTimer.Text = _secondsRemaining.ToString();
-                if(_secondsRemaining < 6)
+                if (_secondsRemaining < 6)
                 {
                     labelTimer.ForeColor = Color.Red;
                 }
@@ -167,7 +171,7 @@ namespace NView
             if (_correctAnswer == "A")
             {
                 _nextQuestion = true;
-                
+
             }
             else
             {
@@ -245,6 +249,9 @@ namespace NView
 
         private void labelFiftyFifty_Click(object sender, EventArgs e)
         {
+            if (fiftyFiftyPressed)
+                return;
+            fiftyFiftyPressed = true;
             int number = Convert.ToInt32(_correctAnswer[0] - 'A');
             int var;
             Random rand = new Random();
@@ -257,15 +264,23 @@ namespace NView
                 switch (var)
                 {
                     case 0:
+                        if (labelAnswerA.Visible == false)
+                            continue;
                         labelAnswerA.Visible = false;
                         break;
                     case 1:
+                        if (labelAnswerB.Visible == false)
+                            continue;
                         labelAnswerB.Visible = false;
                         break;
                     case 2:
+                        if (labelAnswerC.Visible == false)
+                            continue;
                         labelAnswerC.Visible = false;
                         break;
                     case 3:
+                        if (labelAnswerD.Visible == false)
+                            continue;
                         labelAnswerD.Visible = false;
                         break;
 
@@ -273,6 +288,10 @@ namespace NView
                 i++;
 
             }
+            labelFiftyFifty.Text = "X";
+            labelFiftyFifty.ForeColor = Color.Red;
+            labelFiftyFifty.Font = new Font("Consolas", 80.0f, FontStyle.Bold);
+            labelFiftyFifty.Location = new Point(30,48);
         }
 
         private void labelPublic_Click(object sender, EventArgs e)
@@ -282,8 +301,89 @@ namespace NView
 
         private void labelCallFriend_Click(object sender, EventArgs e)
         {
+            if (callAFriendPressed == true)
+                return;
+            callAFriendPressed = true;
+            Random rand = new Random();
+            int value = rand.Next(4);
+            int number = Convert.ToInt32(_correctAnswer[0] - 'A');
+
+            if (fiftyFiftyPressed)
+            {
+                switch (_correctAnswer)
+                {
+                    case "A":
+                            labelAnswerA.ForeColor = Color.Gold;
+                        break;
+                    case "B":
+                            labelAnswerB.ForeColor = Color.Gold;
+                        break;
+                    case "C":
+                            labelAnswerC.ForeColor = Color.Gold;
+                        break;
+                    case "D":
+                            labelAnswerD.ForeColor = Color.Gold;
+                        break;
+                }
+            }
+            else
+            {
+                if (value == 0)
+                {
+                    switch (_correctAnswer)
+                    {
+                        case "A":
+                            labelAnswerA.ForeColor = Color.Gold;
+                            break;
+                        case "B":
+                            labelAnswerB.ForeColor = Color.Gold;
+                            break;
+                        case "C":
+                            labelAnswerC.ForeColor = Color.Gold;
+                            break;
+                        case "D":
+                            labelAnswerD.ForeColor = Color.Gold;
+                            break;
+                    }
+                }
+                else
+                {
+
+                    while (true)
+                    {
+                        if (value != number)
+                        {
+                            switch (value)
+                            {
+                                case 0:
+                                    labelAnswerA.ForeColor = Color.Gold;
+                                    break;
+                                case 1:
+                                    labelAnswerB.ForeColor = Color.Gold;
+                                    break;
+                                case 2:
+                                    labelAnswerC.ForeColor = Color.Gold;
+                                    break;
+                                case 3:
+                                    labelAnswerD.ForeColor = Color.Gold;
+                                    break;
+
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+
+            labelCallFriend.Text = "X";
+            labelCallFriend.ForeColor = Color.Red;
+            labelCallFriend.Font = new Font("Consolas", 80.0f, FontStyle.Bold);
+            labelCallFriend.Location = new Point(229, 48);
+        }
+
+        private void labelMoney10_Click(object sender, EventArgs e)
+        {
 
         }
     }
-
 }
