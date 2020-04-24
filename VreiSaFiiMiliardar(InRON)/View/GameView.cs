@@ -18,6 +18,9 @@ namespace NView
         {
             _viewer = viewer;
             InitializeComponent();
+            labelHelp.Text = "Salut. Stii regulile,\n sunt simple: 15 intrebari," +
+                             "\n30 de secunde intrebarea.\n Nu uita, ai parte si de ajutor\n" +
+                             "Apasa start pentru a incepe.";
         }
 
         private void GameView_Load(object sender, EventArgs e)
@@ -27,6 +30,11 @@ namespace NView
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void labelMoney2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

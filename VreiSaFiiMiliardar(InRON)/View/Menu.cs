@@ -27,7 +27,7 @@ namespace NView
 
         private void buttonStartGame_Click(object sender, EventArgs e)
         {
-
+            _viewer.GoToGame();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

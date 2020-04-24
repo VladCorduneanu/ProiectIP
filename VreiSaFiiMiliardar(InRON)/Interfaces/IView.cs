@@ -19,7 +19,8 @@ namespace Interfaces
         bool SignUp(string username, string password);
         void GoToSignUp();
         void GoToLogIn();
+        void GoToMenu();
         void GoToGame();
-  
+
     }
 }

@@ -96,6 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::View.Properties.Resources.menu_image;
             this.ClientSize = new System.Drawing.Size(1064, 601);
             this.Controls.Add(this.buttonRanking);
             this.Controls.Add(this.buttonExit);

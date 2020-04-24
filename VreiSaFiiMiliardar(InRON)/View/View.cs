@@ -32,7 +32,7 @@ namespace NView
         }
 
 
-        public void GoToGame()
+        public void GoToMenu()
         {
             _login.Hide();
             _signup.Hide();
@@ -48,6 +48,12 @@ namespace NView
         {
             _signup.Hide();
             _login.Show();
+        }
+
+        public void GoToGame()
+        {
+            _menu.Hide();
+            _gameView.Show();
         }
 
         public bool Init()
@@ -74,7 +80,7 @@ namespace NView
             bool result = _presenter.Login(username, password);
             if (result)
             {
-                this.GoToGame();
+                this.GoToMenu();
             }
             return result;
         }
@@ -97,7 +103,7 @@ namespace NView
             bool result = _presenter.SignUp(username, password);
             if (result)
             {
-                this.GoToGame();
+                this.GoToMenu();
             }
             return result;
         }
