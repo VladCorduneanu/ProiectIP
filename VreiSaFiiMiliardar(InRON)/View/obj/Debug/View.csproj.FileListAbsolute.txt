@@ -40,3 +40,5 @@ E:\Proiect_ip_git\VreiSaFiiMiliardar(InRON)\View\bin\Debug\Interfaces.pdb
 E:\Proiect_ip_git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.csproj.CopyComplete
 E:\Proiect_ip_git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.csprojAssemblyReference.cache
 E:\Proiect_ip_git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.SignUp.resources
+D:\Facultate\ProiectIP\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Properties.Resources.resources
+D:\Facultate\ProiectIP\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.SignUp.resources
