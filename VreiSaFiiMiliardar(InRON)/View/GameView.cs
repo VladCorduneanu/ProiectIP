@@ -36,5 +36,16 @@ namespace NView
         {
 
         }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+
+
+            this.BackgroundImage = global::View.Properties.Resources.in_game_image;
+            labelHelp.Visible = false;
+            buttonStart.Visible = false;
+
+
+        }
     }
 }

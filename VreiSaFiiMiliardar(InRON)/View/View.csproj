@@ -103,13 +103,13 @@
     <None Include="Resources\Login_image.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\in-game-image.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\menu-image.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\start-game-iamge.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\in-game-image.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
