@@ -21,6 +21,7 @@ namespace NView
         private Form _gameEnd;
         private Form _evolution;
         private Form _settings;
+        private Form _ranking;
 
         private bool _gameWon;
 
@@ -45,6 +46,8 @@ namespace NView
             _gameView = new GameView(this);
             _gameEnd = new GameEnd(this);
             _signup = new SignUp(this);
+            _settings = new Settings(this);
+            _ranking = new Ranking(this);
             Console.WriteLine("View::StartProgram() : Forms have been initialised");
 
             // Running the app
@@ -85,7 +88,16 @@ namespace NView
             _gameEnd = new GameEnd(this);
             _gameEnd.Show();
         }
-
+        public void GotoSettings()
+        {
+            _menu.Hide();
+            _settings.Show();
+        }
+        public void GotoRanking()
+        {
+            _menu.Hide();
+            _ranking.Show();
+        }
         public bool Login(string username, string password)
         {
             bool result = _presenter.Login(username, password);
@@ -137,5 +149,7 @@ namespace NView
         {
             _gameWon = value;
         }
+
+       
     }
 }

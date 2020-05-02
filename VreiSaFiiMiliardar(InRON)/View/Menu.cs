@@ -39,5 +39,15 @@ namespace NView
         {
             Application.Exit();         
         }
+
+        private void buttonSettings_Click(object sender, EventArgs e)
+        {
+            _viewer.GotoSettings();
+        }
+
+        private void buttonRanking_Click(object sender, EventArgs e)
+        {
+            _viewer.GotoRanking();
+        }
     }
 }

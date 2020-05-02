@@ -23,6 +23,8 @@ namespace Interfaces
         void GoToGame();
         void GoToGameEnd();
         void StartGame();
+        void GotoSettings();
+        void GotoRanking();
         QuestionModel GetQuestion();
         bool GetGameWon();
         void SetGameWon(bool value);

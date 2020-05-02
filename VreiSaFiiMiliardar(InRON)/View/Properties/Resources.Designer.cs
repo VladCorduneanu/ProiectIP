@@ -93,6 +93,16 @@ namespace View.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ranking_image {
+            get {
+                object obj = ResourceManager.GetObject("Ranking_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap start_game_iamge {
             get {
                 object obj = ResourceManager.GetObject("start_game_iamge", resourceCulture);
