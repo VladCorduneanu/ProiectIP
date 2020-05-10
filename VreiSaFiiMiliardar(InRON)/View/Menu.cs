@@ -52,7 +52,7 @@ namespace NView
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-
+            Help.ShowHelp(this, "VreiSaFiiMilionar.chm");
         }
     }
 }
