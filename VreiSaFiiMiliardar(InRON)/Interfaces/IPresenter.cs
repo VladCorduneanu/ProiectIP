@@ -12,6 +12,7 @@ namespace Interfaces
         bool Login(string username, string password);
         bool SignUp(string username, string password);
         void StartGame();
+        bool UpdateUserEvolution(string evolution);
         QuestionModel GetQuestion();
         void DeleteAccount();
         void ChangePassword(string password);

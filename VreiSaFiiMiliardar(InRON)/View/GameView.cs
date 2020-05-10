@@ -20,7 +20,6 @@ namespace NView
         private bool _fiftyFiftyPressed;
         private bool _callAFriendPressed;
         private bool _publicPressed;
-        private bool _score;
         private int _currentQuestion;
         private List<Label> _labels;
         public GameView(IView viewer)
@@ -115,23 +114,25 @@ namespace NView
 
         private void NewQuestion()
         {
-            if (_currentQuestion > 0)
-            {
-                _labels[_currentQuestion].BackColor = Color.Orange;
-                _labels[_currentQuestion].Text = "->" + _labels[_currentQuestion].Text;
-                _labels[_currentQuestion-1].BackColor = Color.Transparent;
-                _labels[_currentQuestion-1].Text = _labels[_currentQuestion-1].Text.Substring(2);
-            }
-            else
-            {
-                _labels[_currentQuestion].BackColor = Color.Orange;
-                _labels[_currentQuestion].Text = "->" + _labels[_currentQuestion].Text;
-            }
-            _currentQuestion++;
+          
 
             QuestionModel question = _viewer.GetQuestion();
             if (question != null)
             {
+                if (_currentQuestion > 0)
+                {
+                    _labels[_currentQuestion].BackColor = Color.Orange;
+                    _labels[_currentQuestion].Text = "->" + _labels[_currentQuestion].Text;
+                    _labels[_currentQuestion - 1].BackColor = Color.Transparent;
+                    _labels[_currentQuestion - 1].Text = _labels[_currentQuestion - 1].Text.Substring(2);
+                }
+                else
+                {
+                    _labels[_currentQuestion].BackColor = Color.Orange;
+                    _labels[_currentQuestion].Text = "->" + _labels[_currentQuestion].Text;
+                }
+                _currentQuestion++;
+
                 labelQuestion.Text = question.Question;
                 labelAnswerA.Text = question.AnswerA;
                 labelAnswerB.Text = question.AnswerB;
@@ -160,6 +161,7 @@ namespace NView
                 timerQuestion.Enabled = false;
 
                 _viewer.SetGameWon(true);
+                _viewer.UpdateUserEvolution((_currentQuestion).ToString());
                 _viewer.GoToGameEnd();
                 // terminare joc
             }
@@ -179,7 +181,7 @@ namespace NView
             else
             {
                 timerQuestion.Enabled = false;
-
+                _viewer.UpdateUserEvolution((_currentQuestion-1).ToString());
                 _viewer.SetGameWon(false);
                 _viewer.GoToGameEnd();
             }
@@ -283,6 +285,7 @@ namespace NView
             else
             {
                 _viewer.SetGameWon(false);
+                _viewer.UpdateUserEvolution((_currentQuestion - 1).ToString());
                 _viewer.GoToGameEnd();
             }
 

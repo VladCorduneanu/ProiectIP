@@ -19,9 +19,9 @@ namespace NView
         private Form _menu;
         private Form _gameView;
         private Form _gameEnd;
-        private Form _evolution;
         private Form _settings;
         private Form _ranking;
+       
 
         private bool _gameWon;
 
@@ -128,7 +128,7 @@ namespace NView
             bool result = _presenter.SignUp(username, password);
             if (result)
             {
-                GoToMenu();
+                GoToLogIn();
             }
             return result;
         }
@@ -168,6 +168,10 @@ namespace NView
         {
             _presenter.ResetScore();
             throw new NotImplementedException();
+        }
+        public bool UpdateUserEvolution(string evolution)
+        {
+             return _presenter.UpdateUserEvolution(evolution);
         }
     }
 }

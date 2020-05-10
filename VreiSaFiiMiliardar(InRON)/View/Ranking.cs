@@ -28,5 +28,9 @@ namespace View
             Application.Exit();
         }
 
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            _viewer.GoToMenu();
+        }
     }
 }

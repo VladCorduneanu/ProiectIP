@@ -31,6 +31,7 @@ namespace Interfaces
         void DeleteAccount();
         void ChangePassword(string password);
         void ResetScore();
+        bool UpdateUserEvolution(string evolution);
 
     }
 }
