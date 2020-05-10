@@ -61,6 +61,8 @@ namespace NView
             _login.Hide();
             _signup.Hide();
             _gameEnd.Hide();
+            _settings.Hide();
+            _ranking.Hide();
             _menu.Show();
         }
 
@@ -150,6 +152,22 @@ namespace NView
             _gameWon = value;
         }
 
-       
+        public void DeleteAccount()
+        {
+            _presenter.DeleteAccount();
+            throw new NotImplementedException();
+        }
+
+        public void ChangePassword(string password)
+        {
+            _presenter.ChangePassword(password);
+            throw new NotImplementedException();
+        }
+
+        public void ResetScore()
+        {
+            _presenter.ResetScore();
+            throw new NotImplementedException();
+        }
     }
 }

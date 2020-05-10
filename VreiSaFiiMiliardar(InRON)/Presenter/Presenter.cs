@@ -22,6 +22,16 @@ namespace NPresenter
             Init(view,model);
         }
 
+        public void ChangePassword(string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteAccount()
+        {
+            throw new NotImplementedException();
+        }
+
         public QuestionModel GetQuestion()
         {
             int number = 0;
@@ -74,6 +84,11 @@ namespace NPresenter
             {
                 return false;
             }
+        }
+
+        public void ResetScore()
+        {
+            throw new NotImplementedException();
         }
 
         public bool SignUp(string username, string password)

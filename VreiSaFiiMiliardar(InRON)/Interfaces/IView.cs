@@ -28,6 +28,9 @@ namespace Interfaces
         QuestionModel GetQuestion();
         bool GetGameWon();
         void SetGameWon(bool value);
+        void DeleteAccount();
+        void ChangePassword(string password);
+        void ResetScore();
 
     }
 }

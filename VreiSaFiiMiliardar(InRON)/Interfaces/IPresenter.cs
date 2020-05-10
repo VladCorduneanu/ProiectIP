@@ -13,5 +13,8 @@ namespace Interfaces
         bool SignUp(string username, string password);
         void StartGame();
         QuestionModel GetQuestion();
+        void DeleteAccount();
+        void ChangePassword(string password);
+        void ResetScore();
     }
 }

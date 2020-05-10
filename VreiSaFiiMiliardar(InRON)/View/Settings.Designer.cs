@@ -32,6 +32,8 @@
             this.buttonChangePassword = new System.Windows.Forms.Button();
             this.buttonDeleteAccount = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.textBoxSchimbaParola = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonResetScore
@@ -41,13 +43,13 @@
             this.buttonResetScore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonResetScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonResetScore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonResetScore.Location = new System.Drawing.Point(112, 139);
+            this.buttonResetScore.Location = new System.Drawing.Point(112, 77);
             this.buttonResetScore.Name = "buttonResetScore";
             this.buttonResetScore.Size = new System.Drawing.Size(211, 42);
             this.buttonResetScore.TabIndex = 0;
             this.buttonResetScore.Text = "Reset Score";
             this.buttonResetScore.UseVisualStyleBackColor = false;
-            this.buttonResetScore.Click += new System.EventHandler(this.button1_Click);
+            this.buttonResetScore.Click += new System.EventHandler(this.buttonResetScore_Click);
             // 
             // buttonChangePassword
             // 
@@ -62,6 +64,7 @@
             this.buttonChangePassword.TabIndex = 1;
             this.buttonChangePassword.Text = "Change Password";
             this.buttonChangePassword.UseVisualStyleBackColor = false;
+            this.buttonChangePassword.Click += new System.EventHandler(this.buttonChangePassword_Click);
             // 
             // buttonDeleteAccount
             // 
@@ -70,12 +73,13 @@
             this.buttonDeleteAccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDeleteAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeleteAccount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonDeleteAccount.Location = new System.Drawing.Point(112, 281);
+            this.buttonDeleteAccount.Location = new System.Drawing.Point(112, 141);
             this.buttonDeleteAccount.Name = "buttonDeleteAccount";
             this.buttonDeleteAccount.Size = new System.Drawing.Size(211, 42);
             this.buttonDeleteAccount.TabIndex = 2;
             this.buttonDeleteAccount.Text = "Delete Account";
             this.buttonDeleteAccount.UseVisualStyleBackColor = false;
+            this.buttonDeleteAccount.Click += new System.EventHandler(this.buttonDeleteAccount_Click);
             // 
             // buttonBack
             // 
@@ -84,12 +88,20 @@
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonBack.Location = new System.Drawing.Point(112, 352);
+            this.buttonBack.Location = new System.Drawing.Point(112, 492);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(211, 42);
             this.buttonBack.TabIndex = 3;
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // textBoxSchimbaParola
+            // 
+            this.textBoxSchimbaParola.Location = new System.Drawing.Point(112, 270);
+            this.textBoxSchimbaParola.Name = "textBoxSchimbaParola";
+            this.textBoxSchimbaParola.Size = new System.Drawing.Size(211, 20);
+            this.textBoxSchimbaParola.TabIndex = 4;
             // 
             // Settings
             // 
@@ -97,6 +109,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::View.Properties.Resources.menu_image;
             this.ClientSize = new System.Drawing.Size(1064, 601);
+            this.Controls.Add(this.textBoxSchimbaParola);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonDeleteAccount);
             this.Controls.Add(this.buttonChangePassword);
@@ -107,6 +120,7 @@
             this.Text = "Settings";
             this.Load += new System.EventHandler(this.Settings_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -116,5 +130,7 @@
         private System.Windows.Forms.Button buttonChangePassword;
         private System.Windows.Forms.Button buttonDeleteAccount;
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.TextBox textBoxSchimbaParola;
     }
 }
