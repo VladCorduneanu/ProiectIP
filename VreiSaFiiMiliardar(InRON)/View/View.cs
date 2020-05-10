@@ -155,5 +155,10 @@ namespace NView
         {
              return _presenter.UpdateUserEvolution(evolution);
         }
+
+        public string GetRankingTable()
+        {
+            return _presenter.GetRankingTable();
+        }
     }
 }

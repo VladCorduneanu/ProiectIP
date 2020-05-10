@@ -13,5 +13,6 @@ namespace Interfaces
         bool UpdatePassword(UserModel userModel, string newPassword);
         bool UpdateEvolution(string username, string newEvolution);
         string GetEvolution(string username);
+        List<UserModel> GetUserRankings();
     }
 }

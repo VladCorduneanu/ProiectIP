@@ -55,6 +55,31 @@ namespace NPresenter
             return question;
         }
 
+        public string GetRankingTable()
+        {
+            StringBuilder sb = new StringBuilder("");
+            List<UserModel> usersRanking = _model.UserDAO().GetUserRankings();
+            int nr = 1;
+            for (int i = 0; i < usersRanking.Count; i++)
+            {
+                if (usersRanking[i].Evolution == "15")
+                {
+                    sb.Append(usersRanking[i].Username + " a castigat premiul cel mare, ajungand la intrebarea " + usersRanking[i].Evolution + "\n");
+                }
+                else
+                {
+                    sb.Append(usersRanking[i].Username + " nu a castigat inca, oprindu-se la intrebarea numarul " + usersRanking[i].Evolution + "\n");
+                }
+
+                if (i == 9)
+                {
+                    break;
+                }
+            }
+
+            return sb.ToString();
+        }
+
         public void Init(IView view, IModelController model)
         {
             _view = view;

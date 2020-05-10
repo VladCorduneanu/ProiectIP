@@ -79,3 +79,7 @@ D:\Ip_git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Settings.resources
 D:\Ip_git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Ranking.resources
 D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Ranking.resources
 D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Settings.resources
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.GameEnd.resources
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Ranking.resources
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Settings.resources
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.SignUp.resources

@@ -7,3 +7,12 @@ D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\obj\Debug\Login.csproj.Co
 D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\obj\Debug\Login.csproj.CopyComplete
 D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\obj\Debug\Proxy.dll
 D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\obj\Debug\Proxy.pdb
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\Proxy\bin\Debug\Proxy.dll
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\Proxy\bin\Debug\Proxy.pdb
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\Proxy\bin\Debug\Interfaces.dll
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\Proxy\bin\Debug\Interfaces.pdb
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\Proxy\obj\Debug\Login.csprojAssemblyReference.cache
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\Proxy\obj\Debug\Login.csproj.CoreCompileInputs.cache
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\Proxy\obj\Debug\Login.csproj.CopyComplete
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\Proxy\obj\Debug\Proxy.dll
+E:\IP_GIT\VreiSaFiiMiliardar(InRON)\Proxy\obj\Debug\Proxy.pdb

@@ -30,5 +30,7 @@ namespace Interfaces
         void SetGameWon(bool value);
         bool UpdateUserEvolution(string evolution);
 
+        String GetRankingTable();
+
     }
 }

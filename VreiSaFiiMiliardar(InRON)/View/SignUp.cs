@@ -65,6 +65,11 @@ namespace View
             {
                 MessageBox.Show("Exista deja un utilizator cu aces nume");
             }
+            else {
+                textBoxSignUpUsername.Text = "";
+                textBoxSignUpPassword.Text = "";
+                textBoxSignUpConfirm.Text = "";
+            }
         }
     }
 }

@@ -14,5 +14,7 @@ namespace Interfaces
         void StartGame();
         bool UpdateUserEvolution(string evolution);
         QuestionModel GetQuestion();
+
+        String GetRankingTable();
     }
 }
