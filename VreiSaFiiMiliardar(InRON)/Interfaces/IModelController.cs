@@ -8,7 +8,7 @@ namespace Interfaces
 {
     public interface IModelController
     {
-        IProxy Proxy();
+        ILoginModule Proxy();
         IQuestionDAO QuestionDAO();
         IUserDAO UserDAO();
         IGameModel GameModel();

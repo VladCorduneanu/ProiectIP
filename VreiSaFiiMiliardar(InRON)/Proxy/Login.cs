@@ -6,15 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace NProxy
+namespace NLogin
 {
-    public class Proxy : IProxy
+    public class LoginModule : ILoginModule
     {
         private IModelController _modelController;
         private string _encryptionKey = "cheie";
         private UserModel _currentUser;
 
-        public Proxy(IModelController modelController)
+        public LoginModule(IModelController modelController)
         {
             _modelController = modelController;
         }
