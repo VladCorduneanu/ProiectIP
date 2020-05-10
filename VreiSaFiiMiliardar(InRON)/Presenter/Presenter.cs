@@ -16,6 +16,7 @@ namespace NPresenter
         private List<QuestionModel> _level3Questions;
         private int _currentQuestion;
         private Random _random;
+        private UserModel user;
 
         public Presenter(IView view, IModelController model)
         {
@@ -64,7 +65,7 @@ namespace NPresenter
 
         public bool Login(string username, string password)
         {
-            UserModel user = _model.Proxy().Login(username, password);
+           user = _model.Proxy().Login(username, password);
 
             if(user != null)
             {
@@ -88,6 +89,23 @@ namespace NPresenter
             _level3Questions = _model.QuestionDAO().GetQuestions(3);
 
             _currentQuestion = 0;
+        }
+
+        public bool UpdateUserEvolution(string evolution)
+        {
+            string currentEvolution;
+            currentEvolution = _model.UserDAO().GetEvolution(user.Username);
+            if(currentEvolution == "")
+            {
+                return false;
+            }
+            if(Convert.ToInt32(currentEvolution) < Convert.ToInt32(evolution))
+            {
+                _model.UserDAO().UpdateEvolution(user.Username, evolution);
+            }          
+            return true;
+
+            
         }
     }
 }

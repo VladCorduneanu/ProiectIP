@@ -104,7 +104,7 @@ namespace DatabaseAcces
             return result;
         }
 
-        public bool UpdateEvolution(UserModel userModel, string newEvolution)
+        public bool UpdateEvolution(string username, string newEvolution)
         {
             if (newEvolution.Equals(""))
             {
@@ -116,7 +116,7 @@ namespace DatabaseAcces
             cmd = con.CreateCommand();
             try
             {
-                cmd.CommandText = "UPDATE USERS SET EVOLUTION='" + newEvolution + "' WHERE USERNAME='" + userModel.Username + "';";
+                cmd.CommandText = "UPDATE USERS SET EVOLUTION='" + newEvolution + "' WHERE USERNAME='" + username + "';";
                 cmd.ExecuteNonQuery();
                 result = true;
             }
@@ -127,6 +127,31 @@ namespace DatabaseAcces
             con.Close();
             return result;
         }
-    
+
+        public string GetEvolution(string username)
+        {
+            SQLiteConnection con = CreateConnection();
+            SQLiteCommand cmd;
+            cmd = con.CreateCommand();
+            cmd.CommandText = "SELECT EVOLUTION FROM USERS WHERE USERNAME='" + username + "';";
+
+            SQLiteDataReader dataReader;
+            try
+            {
+                dataReader = cmd.ExecuteReader();
+                dataReader.Read();
+                string evolution = dataReader.GetString(0);
+                dataReader.Close();
+                con.Close();
+                return evolution;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Utilizatorul nu exista. Se va returna null");
+            }
+            con.Close();
+            return "";         
+        }
+
     }
 }

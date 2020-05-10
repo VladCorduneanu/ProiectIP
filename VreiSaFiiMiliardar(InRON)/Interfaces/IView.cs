@@ -28,6 +28,7 @@ namespace Interfaces
         QuestionModel GetQuestion();
         bool GetGameWon();
         void SetGameWon(bool value);
+        bool UpdateUserEvolution(string evolution);
 
     }
 }

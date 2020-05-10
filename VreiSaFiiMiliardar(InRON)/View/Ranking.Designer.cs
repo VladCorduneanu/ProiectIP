@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonBack = new System.Windows.Forms.Button();
+            this.labelRanking = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -38,12 +39,25 @@
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonBack.Location = new System.Drawing.Point(428, 436);
+            this.buttonBack.Location = new System.Drawing.Point(434, 508);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(211, 42);
             this.buttonBack.TabIndex = 0;
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // labelRanking
+            // 
+            this.labelRanking.BackColor = System.Drawing.Color.Transparent;
+            this.labelRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold);
+            this.labelRanking.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelRanking.Location = new System.Drawing.Point(26, 31);
+            this.labelRanking.Name = "labelRanking";
+            this.labelRanking.Size = new System.Drawing.Size(1006, 461);
+            this.labelRanking.TabIndex = 1;
+            this.labelRanking.Text = "Best Of Ten";
+            this.labelRanking.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Ranking
             // 
@@ -51,6 +65,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::View.Properties.Resources.Ranking_image;
             this.ClientSize = new System.Drawing.Size(1064, 601);
+            this.Controls.Add(this.labelRanking);
             this.Controls.Add(this.buttonBack);
             this.Name = "Ranking";
             this.Text = "Ranking";
@@ -62,5 +77,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Label labelRanking;
     }
 }

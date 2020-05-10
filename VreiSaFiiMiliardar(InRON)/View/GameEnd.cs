@@ -28,6 +28,7 @@ namespace View
 
         private void GameEnd_Load(object sender, EventArgs e)
         {
+            
             bool gameWon = _viewer.GetGameWon();
 
             if (gameWon == true)

@@ -11,6 +11,7 @@ namespace Interfaces
         UserModel GetUser(string username);
         bool InsertUser(UserModel userModel);
         bool UpdatePassword(UserModel userModel, string newPassword);
-        bool UpdateEvolution(UserModel userModel, string newEvolution);
+        bool UpdateEvolution(string username, string newEvolution);
+        string GetEvolution(string username);
     }
 }
