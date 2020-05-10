@@ -100,6 +100,7 @@
             // 
             this.textBoxSchimbaParola.Location = new System.Drawing.Point(112, 270);
             this.textBoxSchimbaParola.Name = "textBoxSchimbaParola";
+            this.textBoxSchimbaParola.PasswordChar = '*';
             this.textBoxSchimbaParola.Size = new System.Drawing.Size(211, 20);
             this.textBoxSchimbaParola.TabIndex = 4;
             // 

@@ -18,7 +18,7 @@ namespace NModelController
         private IUserDAO _userDAO;
         private IGameModel _gameModel;
 
-        public ILoginModule Proxy()
+        public ILoginModule LoginModule()
         {
             return _proxy;
         }

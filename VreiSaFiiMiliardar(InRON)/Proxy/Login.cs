@@ -52,9 +52,11 @@ namespace NLogin
             return null;
         }
         
-        public bool UpdateUser(UserModel user)
+        public bool UpdateUser(UserModel user, string password)
         {
-            throw new NotImplementedException();
+            string encryptedPassword = Cryptography.Encrypt(password, _encryptionKey);
+            _modelController.UserDAO().UpdatePassword(user, encryptedPassword);
+            return true;
         }
     }
 }

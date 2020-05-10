@@ -16,7 +16,7 @@ namespace NPresenter
         private List<QuestionModel> _level3Questions;
         private int _currentQuestion;
         private Random _random;
-        private UserModel user;
+        private UserModel _user;
 
         public Presenter(IView view, IModelController model)
         {
@@ -25,12 +25,12 @@ namespace NPresenter
 
         public void ChangePassword(string password)
         {
-            throw new NotImplementedException();
+            _model.LoginModule().UpdateUser(_user, password);
         }
 
         public void DeleteAccount()
         {
-            throw new NotImplementedException();
+            _model.UserDAO().DeleteUser(_user);
         }
 
         public QuestionModel GetQuestion()
@@ -75,9 +75,9 @@ namespace NPresenter
 
         public bool Login(string username, string password)
         {
-           user = _model.Proxy().Login(username, password);
+           _user = _model.LoginModule().Login(username, password);
 
-            if(user != null)
+            if(_user != null)
             {
                 return true;
             }
@@ -89,12 +89,12 @@ namespace NPresenter
 
         public void ResetScore()
         {
-            throw new NotImplementedException();
+            _model.UserDAO().UpdateEvolution(_user.Username, "0");
         }
 
         public bool SignUp(string username, string password)
         {
-            return _model.Proxy().AddUser(username, password);
+            return _model.LoginModule().AddUser(username, password);
         }
 
         public void StartGame()
@@ -109,14 +109,14 @@ namespace NPresenter
         public bool UpdateUserEvolution(string evolution)
         {
             string currentEvolution;
-            currentEvolution = _model.UserDAO().GetEvolution(user.Username);
+            currentEvolution = _model.UserDAO().GetEvolution(_user.Username);
             if(currentEvolution == "")
             {
                 return false;
             }
             if(Convert.ToInt32(currentEvolution) < Convert.ToInt32(evolution))
             {
-                _model.UserDAO().UpdateEvolution(user.Username, evolution);
+                _model.UserDAO().UpdateEvolution(_user.Username, evolution);
             }          
             return true;
 

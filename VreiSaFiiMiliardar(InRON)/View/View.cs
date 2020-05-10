@@ -75,6 +75,7 @@ namespace NView
         {
             _signup.Hide();
             _login.Show();
+            _settings.Hide();
         }
 
         public void GoToGame()
@@ -155,19 +156,18 @@ namespace NView
         public void DeleteAccount()
         {
             _presenter.DeleteAccount();
-            throw new NotImplementedException();
+            GoToLogIn();
+
         }
 
         public void ChangePassword(string password)
         {
             _presenter.ChangePassword(password);
-            throw new NotImplementedException();
         }
 
         public void ResetScore()
         {
             _presenter.ResetScore();
-            throw new NotImplementedException();
         }
         public bool UpdateUserEvolution(string evolution)
         {

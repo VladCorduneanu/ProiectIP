@@ -10,7 +10,7 @@ namespace Interfaces
     {
         UserModel Login(string username, string password);
         bool AddUser(string username, string password);
-        bool UpdateUser(UserModel user);
+        bool UpdateUser(UserModel user,string password);
         UserModel GetCurrentUser();
         
     }

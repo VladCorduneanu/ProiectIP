@@ -150,8 +150,28 @@ namespace DatabaseAcces
                 Console.WriteLine("Utilizatorul nu exista. Se va returna null");
             }
             con.Close();
-            return "";         
+            return "";
         }
 
+        public bool DeleteUser(UserModel userModel)
+        {
+            bool result;
+            SQLiteConnection con = CreateConnection();
+            SQLiteCommand cmd;
+            cmd = con.CreateCommand();
+            cmd.CommandText = "DELETE FROM USERS WHERE USERNAME='" + userModel.Username + "';";
+            try
+            {
+                cmd.ExecuteNonQuery();
+                result = true;
+            }
+            catch (Exception e)
+            {
+                result = false;
+            }
+            con.Close();
+            return result;
+
+        }
     }
 }
