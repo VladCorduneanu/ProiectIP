@@ -77,3 +77,5 @@ D:\Ip_git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.dll
 D:\Ip_git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.pdb
 D:\Ip_git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Settings.resources
 D:\Ip_git\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Ranking.resources
+E:\IP_GIT_PROIECT\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Ranking.resources
+E:\IP_GIT_PROIECT\VreiSaFiiMiliardar(InRON)\View\obj\Debug\View.Settings.resources

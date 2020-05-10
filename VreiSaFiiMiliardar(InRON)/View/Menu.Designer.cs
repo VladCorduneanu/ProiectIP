@@ -32,6 +32,7 @@
             this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonRanking = new System.Windows.Forms.Button();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonStartGame
@@ -71,7 +72,7 @@
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonExit.Location = new System.Drawing.Point(112, 352);
+            this.buttonExit.Location = new System.Drawing.Point(112, 404);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(211, 42);
             this.buttonExit.TabIndex = 2;
@@ -94,12 +95,28 @@
             this.buttonRanking.UseVisualStyleBackColor = false;
             this.buttonRanking.Click += new System.EventHandler(this.buttonRanking_Click);
             // 
+            // buttonHelp
+            // 
+            this.buttonHelp.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHelp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonHelp.Location = new System.Drawing.Point(112, 342);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(211, 42);
+            this.buttonHelp.TabIndex = 4;
+            this.buttonHelp.Text = "Help";
+            this.buttonHelp.UseVisualStyleBackColor = false;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::View.Properties.Resources.menu_image;
             this.ClientSize = new System.Drawing.Size(1064, 601);
+            this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.buttonRanking);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonSettings);
@@ -120,5 +137,6 @@
         private System.Windows.Forms.Button buttonSettings;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonRanking;
+        private System.Windows.Forms.Button buttonHelp;
     }
 }

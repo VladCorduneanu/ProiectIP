@@ -49,5 +49,10 @@ namespace NView
         {
             _viewer.GotoRanking();
         }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
