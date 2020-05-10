@@ -11,6 +11,5 @@ namespace Interfaces
         ILoginModule LoginModule();
         IQuestionDAO QuestionDAO();
         IUserDAO UserDAO();
-        IGameModel GameModel();
     }
 }

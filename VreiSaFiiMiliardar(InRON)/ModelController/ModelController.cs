@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DatabaseAcces;
 using Interfaces;
-using NGameModel;
 using NLogin;
 
 namespace NModelController
@@ -16,7 +15,6 @@ namespace NModelController
         private ILoginModule _proxy;
         private IQuestionDAO _questionDAO;
         private IUserDAO _userDAO;
-        private IGameModel _gameModel;
 
         public ILoginModule LoginModule()
         {
@@ -30,10 +28,6 @@ namespace NModelController
         {
             return _userDAO;
         }
-        public IGameModel GameModel()
-        {
-            return _gameModel;
-        }
 
         public ModelController(/*IPresenter presenter*/)
         {
@@ -41,7 +35,6 @@ namespace NModelController
             _proxy = new LoginModule(this);
             _questionDAO = new QuestionDAOService(this,Environment.CurrentDirectory + "/questions.db");
             _userDAO = new UserDAOService(this,Environment.CurrentDirectory + "/users.db");
-            _gameModel = new GameModel(this);
         }
     }
 }

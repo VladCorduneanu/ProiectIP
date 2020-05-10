@@ -102,7 +102,7 @@
             this.buttonSingUpLogIn.Name = "buttonSingUpLogIn";
             this.buttonSingUpLogIn.Size = new System.Drawing.Size(122, 37);
             this.buttonSingUpLogIn.TabIndex = 5;
-            this.buttonSingUpLogIn.Text = "Sing Up";
+            this.buttonSingUpLogIn.Text = "Sign Up";
             this.buttonSingUpLogIn.UseVisualStyleBackColor = false;
             this.buttonSingUpLogIn.Click += new System.EventHandler(this.buttonSingUpLogIn_Click);
             // 

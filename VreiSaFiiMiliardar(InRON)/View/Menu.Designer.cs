@@ -33,6 +33,7 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonRanking = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
+            this.labelUsername = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonStartGame
@@ -110,12 +111,25 @@
             this.buttonHelp.UseVisualStyleBackColor = false;
             this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
+            // labelUsername
+            // 
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.BackColor = System.Drawing.Color.Transparent;
+            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsername.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelUsername.Location = new System.Drawing.Point(929, 9);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(123, 24);
+            this.labelUsername.TabIndex = 5;
+            this.labelUsername.Text = "Salut, USER";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::View.Properties.Resources.menu_image;
             this.ClientSize = new System.Drawing.Size(1064, 601);
+            this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.buttonRanking);
             this.Controls.Add(this.buttonExit);
@@ -128,6 +142,7 @@
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -138,5 +153,6 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonRanking;
         private System.Windows.Forms.Button buttonHelp;
+        private System.Windows.Forms.Label labelUsername;
     }
 }
