@@ -90,6 +90,11 @@ namespace NPresenter
             return sb.ToString();
         }
 
+        public string GetUsername()
+        {
+            return _user.Username;
+        }
+
         public void Init(IView view, IModelController model)
         {
             _view = view;

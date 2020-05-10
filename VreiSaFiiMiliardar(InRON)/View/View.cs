@@ -21,12 +21,11 @@ namespace NView
         private Form _gameEnd;
         private Form _settings;
         private Form _ranking;
-       
-
         private bool _gameWon;
 
         // Presenter reference
         private IPresenter _presenter;
+
 
         public View()
         {
@@ -58,6 +57,7 @@ namespace NView
 
         public void GoToMenu()
         {
+            _menu = new Menu(this);
             _login.Hide();
             _signup.Hide();
             _gameEnd.Hide();
@@ -178,6 +178,11 @@ namespace NView
         public string GetRankingTable()
         {
             return _presenter.GetRankingTable();
+        }
+
+        public string GetUsername()
+        {
+            return _presenter.GetUsername();
         }
     }
 }

@@ -32,8 +32,8 @@ namespace Interfaces
         void ChangePassword(string password);
         void ResetScore();
         bool UpdateUserEvolution(string evolution);
-
-        String GetRankingTable();
+        string GetRankingTable();
+        string GetUsername();
 
     }
 }

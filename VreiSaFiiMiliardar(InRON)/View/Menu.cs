@@ -22,7 +22,7 @@ namespace NView
 
         private void Menu_Load(object sender, EventArgs e)
         {
-
+            labelUsername.Text = "Salut, " + _viewer.GetUsername();
         }
 
         private void buttonStartGame_Click(object sender, EventArgs e)
@@ -54,5 +54,6 @@ namespace NView
         {
 
         }
+
     }
 }

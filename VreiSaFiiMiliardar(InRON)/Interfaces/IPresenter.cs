@@ -17,7 +17,7 @@ namespace Interfaces
         void DeleteAccount();
         void ChangePassword(string password);
         void ResetScore();
-
         string GetRankingTable();
+        string GetUsername();
     }
 }
