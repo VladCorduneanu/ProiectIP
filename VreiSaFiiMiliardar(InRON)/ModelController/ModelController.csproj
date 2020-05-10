@@ -57,9 +57,9 @@
       <Project>{8659df00-970d-4ab5-bb0b-c4d5a9e0c75c}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Proxy\Proxy.csproj">
+    <ProjectReference Include="..\Proxy\Login.csproj">
       <Project>{71b7b47e-31eb-4424-a692-51f738a57efe}</Project>
-      <Name>Proxy</Name>
+      <Name>Login</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

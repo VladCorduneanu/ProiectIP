@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    public interface IProxy
+    public interface ILoginModule
     {
         UserModel Login(string username, string password);
         bool AddUser(string username, string password);
