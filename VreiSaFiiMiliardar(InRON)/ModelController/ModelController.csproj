@@ -49,10 +49,6 @@
       <Project>{da10159b-06f4-415b-9918-873d20a059ef}</Project>
       <Name>DatabaseAcces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GameModel\GameModel.csproj">
-      <Project>{850306fa-312a-495f-8518-6206cf663a53}</Project>
-      <Name>GameModel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{8659df00-970d-4ab5-bb0b-c4d5a9e0c75c}</Project>
       <Name>Interfaces</Name>

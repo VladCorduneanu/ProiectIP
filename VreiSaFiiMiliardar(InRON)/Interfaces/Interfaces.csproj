@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IGameModel.cs" />
     <Compile Include="IModelController.cs" />
     <Compile Include="IPresenter.cs" />
     <Compile Include="IProxy.cs" />
