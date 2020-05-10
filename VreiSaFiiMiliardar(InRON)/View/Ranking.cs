@@ -21,7 +21,7 @@ namespace View
         }
         private void Ranking_Load(object sender, EventArgs e)
         {
-
+            labelRanking.Text = _viewer.GetRankingTable();
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -31,6 +31,11 @@ namespace View
         private void buttonBack_Click(object sender, EventArgs e)
         {
             _viewer.GoToMenu();
+        }
+
+        private void labelRanking_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

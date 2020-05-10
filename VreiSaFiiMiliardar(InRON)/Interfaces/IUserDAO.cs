@@ -14,5 +14,6 @@ namespace Interfaces
         bool UpdateEvolution(string username, string newEvolution);
         string GetEvolution(string username);
         bool DeleteUser(UserModel userModel);
+        List<UserModel> GetUserRankings();
     }
 }

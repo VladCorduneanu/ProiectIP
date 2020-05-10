@@ -153,6 +153,46 @@ namespace DatabaseAcces
             return "";
         }
 
+        public List<UserModel> GetUserRankings()
+        {
+            List<UserModel> userModelsRanking = new List<UserModel>();
+
+            SQLiteConnection con = CreateConnection();
+            SQLiteCommand cmd;
+            cmd = con.CreateCommand();
+            cmd.CommandText = "SELECT USERNAME, EVOLUTION FROM USERS;";
+
+            SQLiteDataReader dataReader;
+            dataReader = cmd.ExecuteReader();
+            while (dataReader.Read())
+            {
+                userModelsRanking.Add(new UserModel(0,
+                                                    dataReader.GetString(0),
+                                                    null,
+                                                    dataReader.GetString(1)));
+            }
+            con.Close();
+
+            for (int i = 0; i < userModelsRanking.Count; i++)
+            {
+                int swaps = 0;
+                for (int j = 0; j < userModelsRanking.Count - i - 1; j++)
+                {
+                    if (Convert.ToInt32(userModelsRanking[j].Evolution) < Convert.ToInt32(userModelsRanking[j + 1].Evolution))
+                    {
+                        UserModel aux = new UserModel(0, userModelsRanking[j].Username, null, userModelsRanking[j].Evolution);
+                        userModelsRanking[j] = userModelsRanking[j + 1];
+                        userModelsRanking[j + 1] = aux;
+                        swaps++;
+                    }
+                }
+                if (swaps == 0)
+                    break;
+            }
+
+            return userModelsRanking;
+        }
+
         public bool DeleteUser(UserModel userModel)
         {
             bool result;
@@ -171,7 +211,6 @@ namespace DatabaseAcces
             }
             con.Close();
             return result;
-
         }
     }
 }

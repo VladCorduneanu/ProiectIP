@@ -98,6 +98,7 @@ namespace NView
         }
         public void GotoRanking()
         {
+            _ranking = new Ranking(this);
             _menu.Hide();
             _ranking.Show();
         }
@@ -172,6 +173,11 @@ namespace NView
         public bool UpdateUserEvolution(string evolution)
         {
              return _presenter.UpdateUserEvolution(evolution);
+        }
+
+        public string GetRankingTable()
+        {
+            return _presenter.GetRankingTable();
         }
     }
 }

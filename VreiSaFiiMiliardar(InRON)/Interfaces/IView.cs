@@ -33,5 +33,7 @@ namespace Interfaces
         void ResetScore();
         bool UpdateUserEvolution(string evolution);
 
+        String GetRankingTable();
+
     }
 }
