@@ -14,11 +14,9 @@ D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\obj\Debug\Model
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\ModelController.dll
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\ModelController.pdb
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\DatabaseAcces.dll
-E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\GameModel.dll
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\Interfaces.dll
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\Proxy.dll
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\DatabaseAcces.pdb
-E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\GameModel.pdb
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\Interfaces.pdb
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\bin\Debug\Proxy.pdb
 E:\Ip_Git\VreiSaFiiMiliardar(InRON)\ModelController\obj\Debug\ModelController.csprojAssemblyReference.cache

@@ -69,7 +69,6 @@ namespace NPresenter
         {
             StringBuilder sb = new StringBuilder("");
             List<UserModel> usersRanking = _model.UserDAO().GetUserRankings();
-            int nr = 1;
             for (int i = 0; i < usersRanking.Count; i++)
             {
                 if (usersRanking[i].Evolution == "15")

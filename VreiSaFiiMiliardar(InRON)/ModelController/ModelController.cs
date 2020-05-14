@@ -12,13 +12,13 @@ namespace NModelController
     public class ModelController:IModelController
     {
         //private IPresenter _presenter;
-        private ILoginModule _proxy;
+        private ILoginModule _login;
         private IQuestionDAO _questionDAO;
         private IUserDAO _userDAO;
 
         public ILoginModule LoginModule()
         {
-            return _proxy;
+            return _login;
         }
         public IQuestionDAO QuestionDAO()
         {
@@ -32,7 +32,7 @@ namespace NModelController
         public ModelController(/*IPresenter presenter*/)
         {
             //_presenter = presenter;
-            _proxy = new LoginModule(this);
+            _login = new LoginModule(this);
             _questionDAO = new QuestionDAOService(this,Environment.CurrentDirectory + "/questions.db");
             _userDAO = new UserDAOService(this,Environment.CurrentDirectory + "/users.db");
         }
