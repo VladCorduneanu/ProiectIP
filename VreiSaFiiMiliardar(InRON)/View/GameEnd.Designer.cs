@@ -44,7 +44,6 @@
             this.labelFinal.TabIndex = 0;
             this.labelFinal.Text = "label1";
             this.labelFinal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelFinal.Click += new System.EventHandler(this.labelFinal_Click);
             // 
             // labelVirgil
             // 

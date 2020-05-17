@@ -1,6 +1,23 @@
-﻿using Interfaces;
-//using NPresenter;
+﻿/**************************************************************************
+ *                                                                        *
+ *  File:        View.cs                                                  *
+ *  Atuhors:     Baciu H. Alexandru, Corduneanu Vlad, Haralamb Marian     *
+ *  Contributions: The authors' contribution depends on the               *
+ *  implementation of tasks                                               *
+ *                                                                        *
+ *                                                                        *
+ *  Description: Contains logic for view of MVP design                    *
+ *                                                                        *
+ *                                                                        *
+ *  This code and information is provided "as is" without warranty of     *
+ *  any kind, either expressed or implied, including but not limited      *
+ *  to the implied warranties of merchantability or fitness for a         *
+ *  particular purpose. You are free to use this source code in your      *
+ *  applications as long as the original copyright notice is included.    *
+ *                                                                        *
+ **************************************************************************/
 
+using Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +30,7 @@ namespace NView
 {
     public class View : IView
     {
-        // The Forms that we are using
+        // forms that represent the views for user
         private Form _login;
         private Form _signup;
         private Form _menu;
@@ -21,25 +38,29 @@ namespace NView
         private Form _gameEnd;
         private Form _settings;
         private Form _ranking;
+        // variable that checks if game was won
         private bool _gameWon;
-
-        // Presenter reference
+        // presenter reference
         private IPresenter _presenter;
 
-
+        /// <summary>
+        /// Void constructor that call initializa method
+        /// </summary>
         public View()
         {
-            Console.WriteLine("View has been created");
             Init();
         }
 
+        /// <summary>
+        /// Initialize method that instatiate all the forms 
+        /// </summary>
+        /// <returns>true for succesful operation</returns>
         public bool Init()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Forms creation
-
+            // forms creation
             _login = new Login(this);
             _menu = new Menu(this);
             _gameView = new GameView(this);
@@ -47,14 +68,33 @@ namespace NView
             _signup = new SignUp(this);
             _settings = new Settings(this);
             _ranking = new Ranking(this);
-            Console.WriteLine("View::StartProgram() : Forms have been initialised");
-
-            // Running the app
-            Console.WriteLine("View::StartProgram() : Running application");
 
             return true;
         }
 
+        /// <summary>
+        /// Method that late initialize presenter
+        /// </summary>
+        /// <param name="presenter"></param>
+        public void SetPresenter(IPresenter presenter)
+        {
+            _presenter = presenter;
+        }
+
+        /// <summary>
+        /// Run the application with log in form as main form
+        /// </summary>
+        /// <returns>true for succesfull operation</returns>
+        public bool StartApplication()
+        {
+            Application.Run(_login);
+
+            return true;
+        }
+
+        /// <summary>
+        /// Method that hides the current views and show the menu view
+        /// </summary>
         public void GoToMenu()
         {
             _menu = new Menu(this);
@@ -66,11 +106,18 @@ namespace NView
             _menu.Show();
         }
 
+        /// <summary>
+        /// Method that hides the current views and show the sign up view
+        /// </summary>
         public void GoToSignUp()
         {
             _login.Hide();
             _signup.Show();
         }
+
+        /// <summary>
+        /// Method that hides the current views and show the log in view
+        /// </summary>
         public void GoToLogIn()
         {
             _signup.Hide();
@@ -78,6 +125,9 @@ namespace NView
             _settings.Hide();
         }
 
+        /// <summary>
+        /// Method that hides the current views and show the game view
+        /// </summary>
         public void GoToGame()
         {
             _menu.Hide();
@@ -85,101 +135,164 @@ namespace NView
             _gameView.Show();
         }
 
+        /// <summary>
+        /// Method that hides the current views and show the game end view
+        /// </summary>
         public void GoToGameEnd()
         {
             _gameView.Hide();
             _gameEnd = new GameEnd(this);
             _gameEnd.Show();
         }
+
+        /// <summary>
+        /// Method that hides the current views and show the settings view
+        /// </summary>
         public void GotoSettings()
         {
             _menu.Hide();
             _settings.Show();
         }
+
+        /// <summary>
+        /// Method that hides the current views and show the ranking view
+        /// </summary>
         public void GotoRanking()
         {
             _ranking = new Ranking(this);
             _menu.Hide();
             _ranking.Show();
         }
+
+        /// <summary>
+        /// Method that call presenter login to validate user info
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>true in case of succesful operation</returns>
         public bool Login(string username, string password)
         {
+            // call presenter to check if credetials are good
             bool result = _presenter.Login(username, password);
+
             if (result)
             {
+                // change form to menu form
                 GoToMenu();
             }
+
             return result;
         }
 
-
-        public void SetPresenter(IPresenter presenter)
-        {
-            _presenter = presenter;
-        }
-
-        public bool StartApplication()
-        {
-            Application.Run(_login);
-
-            return true;
-        }
-
+        /// <summary>
+        /// Method that call presenter sign up to validate user info
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public bool SignUp(string username, string password)
         {
+            // call presenter to check if credetials are good
             bool result = _presenter.SignUp(username, password);
+
             if (result)
             {
+                // change form to log in form
                 GoToLogIn();
             }
+
             return result;
         }
 
+        /// <summary>
+        /// Method that mark the start of the game
+        /// </summary>
         public void StartGame()
         {
+            // call presenter to initialize game questions
             _presenter.StartGame();
         }
 
+        /// <summary>
+        /// Method that get question from present and bring it to the view
+        /// </summary>
+        /// <returns>Question to display or null in case of game won</returns>
         public QuestionModel GetQuestion()
         {
             return _presenter.GetQuestion();
         }
 
+        /// <summary>
+        /// Method that checks the game status
+        /// </summary>
+        /// <returns>the status of the game: true = won </returns>
         bool IView.GetGameWon()
         {
             return _gameWon;
         }
+
+        /// <summary>
+        /// Method that set the game status
+        /// </summary>
+        /// <param name="value"></param>
         void IView.SetGameWon(bool value)
         {
             _gameWon = value;
         }
 
+        /// <summary>
+        /// Method that call presenter to delete user account
+        /// </summary>
         public void DeleteAccount()
         {
+            // call presenter method
             _presenter.DeleteAccount();
+
+            // change view to log in view
             GoToLogIn();
 
         }
 
+        /// <summary>
+        /// Method that call presenter to change user password
+        /// </summary>
+        /// <param name="password"></param>
         public void ChangePassword(string password)
         {
             _presenter.ChangePassword(password);
         }
 
+        /// <summary>
+        /// Method that call presenter to reset user score
+        /// </summary>
         public void ResetScore()
         {
             _presenter.ResetScore();
         }
+
+        /// <summary>
+        /// Method that call presenter to reset user score
+        /// </summary>
+        /// <param name="evolution"></param>
+        /// <returns>true in case of succesful operation</returns>
         public bool UpdateUserEvolution(string evolution)
         {
              return _presenter.UpdateUserEvolution(evolution);
         }
 
+        /// <summary>
+        /// Method that call presenter to get leaderboard
+        /// </summary>
+        /// <returns></returns>
         public string GetRankingTable()
         {
             return _presenter.GetRankingTable();
         }
 
+        /// <summary>
+        /// Getter for current username
+        /// </summary>
+        /// <returns>current username</returns>
         public string GetUsername()
         {
             return _presenter.GetUsername();

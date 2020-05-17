@@ -8,8 +8,6 @@ namespace Testing
     [TestClass]
     public class CryptographyTest { 
 
-
-
         [TestMethod]
         public void TestDecryptPasswordAbcd()
         {

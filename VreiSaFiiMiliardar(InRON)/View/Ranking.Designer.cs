@@ -58,7 +58,6 @@
             this.labelRanking.Size = new System.Drawing.Size(875, 381);
             this.labelRanking.TabIndex = 1;
             this.labelRanking.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelRanking.Click += new System.EventHandler(this.labelRanking_Click);
             // 
             // label1
             // 

@@ -141,7 +141,6 @@
             this.labelMoney10.TabIndex = 33;
             this.labelMoney10.Text = "11.                                       25,000lei";
             this.labelMoney10.UseMnemonic = false;
-            this.labelMoney10.Click += new System.EventHandler(this.labelMoney10_Click);
             // 
             // labelMoney1
             // 
@@ -285,7 +284,6 @@
             this.labelMoney2.TabIndex = 21;
             this.labelMoney2.Text = "3.                                            300lei";
             this.labelMoney2.UseMnemonic = false;
-            this.labelMoney2.Click += new System.EventHandler(this.labelMoney2_Click);
             // 
             // labelMoney3
             // 

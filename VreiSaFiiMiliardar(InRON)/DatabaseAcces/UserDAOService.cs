@@ -1,4 +1,25 @@
-﻿using System;
+﻿/**************************************************************************
+ *                                                                        *
+ *  File:        UserDaoService.cs                                        *
+ *  Atuhors:     Baciu H. Alexandru, Corduneanu Vlad, Haralamb Marian     *
+ *  Contributions: The authors' contribution depends on the               *
+ *  implementation of tasks                                               *
+ *                                                                        *
+ *                                                                        *
+ *  Description: Contains functions that works with sql lite              *
+ *  -> get function, connection function, update function,                *
+ *  delete function, insert function                                      *
+ *                                                                        *
+ *                                                                        *
+ *  This code and information is provided "as is" without warranty of     *
+ *  any kind, either expressed or implied, including but not limited      *
+ *  to the implied warranties of merchantability or fitness for a         *
+ *  particular purpose. You are free to use this source code in your      *
+ *  applications as long as the original copyright notice is included.    *
+ *                                                                        *
+ **************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,14 +32,22 @@ namespace DatabaseAcces
     public class UserDAOService : IUserDAO
     {
         private string _path;
-        private IModelController _modelController;
 
-        public UserDAOService(IModelController modelController, string path)
+        /// <summary>
+        /// Constructor with parameters
+        /// Path for sqllite connection
+        /// </summary>
+        /// <param name="modelController"></param>
+        /// <param name="path"></param>
+        public UserDAOService(string path)
         {
-            _modelController = modelController;
             _path = path;
         }
 
+        /// <summary>
+        /// Private method for creatting a database connection
+        /// </summary>
+        /// <returns>an open connection to database</returns>
         private SQLiteConnection CreateConnection()
         {
             SQLiteConnection con;
@@ -28,21 +57,28 @@ namespace DatabaseAcces
         }
 
         /// <summary>
-        /// Return null if user doesn`t exists
+        /// Public method for getting an user object from database
         /// </summary>
         /// <param name="username"></param>
         /// <returns>null or user</returns>
         public UserModel GetUser(string username)
         {
+            UserModel userModel = null;
+
+            // creating connection
             SQLiteConnection con = CreateConnection();
             SQLiteCommand cmd;
+
+            // creating command
             cmd = con.CreateCommand();
             cmd.CommandText = "SELECT * FROM USERS WHERE USERNAME='" + username + "';";
 
+            // creating reader
             SQLiteDataReader dataReader;
-            UserModel userModel = null;
+
             try
             {
+                // executing transaction
                 dataReader = cmd.ExecuteReader();
                 dataReader.Read();
                 userModel = new UserModel(dataReader.GetInt32(0),
@@ -52,21 +88,36 @@ namespace DatabaseAcces
             }
             catch (Exception e)
             {
+                Console.Write(e.Message);
                 Console.WriteLine("Utilizatorul nu exista. Se va returna null");
             }
+
+            // closing database connection
             con.Close();
+
             return userModel;
         }
 
+        /// <summary>
+        /// Public method for inserting an user into database
+        /// </summary>
+        /// <param name="userModel"></param>
+        /// <returns>true for successful operation</returns>
         public bool InsertUser(UserModel userModel)
         {
             bool result;
+
+            // creating connection
             SQLiteConnection con = CreateConnection();
             SQLiteCommand cmd;
+
+            // creating command
             cmd = con.CreateCommand();
             cmd.CommandText = "INSERT INTO USERS(USERNAME, PASSWORD, EVOLUTION) VALUES('" + userModel.Username + "', '"
                                                                                              + userModel.Password + "', '"
                                                                                              + userModel.Evolution + "');";
+
+            // executing transaction
             try
             {
                 cmd.ExecuteNonQuery();
@@ -74,12 +125,22 @@ namespace DatabaseAcces
             }
             catch (Exception e)
             {
+                Console.Write(e.Message);
                 result = false;
             }
+
+            // closing database connection
             con.Close();
+
             return result;
         }
 
+        /// <summary>
+        /// Public method for updating user password
+        /// </summary>
+        /// <param name="userModel"></param>
+        /// <param name="newPassword"></param>
+        /// <returns>true for successful operation</returns>
         public bool UpdatePassword(UserModel userModel, string newPassword)
         {
             if (newPassword.Equals(""))
@@ -87,10 +148,16 @@ namespace DatabaseAcces
                 return false;
             }
             bool result;
+
+            // creating connection
             SQLiteConnection con = CreateConnection();
             SQLiteCommand cmd;
+
+            // creating command
             cmd = con.CreateCommand();
             cmd.CommandText = "UPDATE USERS SET PASSWORD='" + newPassword + "' WHERE USERNAME='" + userModel.Username + "';";
+
+            // executing transaction
             try
             {
                 cmd.ExecuteNonQuery();
@@ -98,12 +165,22 @@ namespace DatabaseAcces
             }
             catch (Exception e)
             {
+                Console.Write(e.Message);
                 result = false;
             }
+
+            // closing database connection
             con.Close();
+
             return result;
         }
 
+        /// <summary>
+        /// Public method for updating user score
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="newEvolution"></param>
+        /// <returns>true for successful operation</returns>
         public bool UpdateEvolution(string username, string newEvolution)
         {
             if (newEvolution.Equals(""))
@@ -111,59 +188,96 @@ namespace DatabaseAcces
                 return false;
             }
             bool result;
+
+            // creating connection
             SQLiteConnection con = CreateConnection();
             SQLiteCommand cmd;
+
+            // creating command
             cmd = con.CreateCommand();
+            cmd.CommandText = "UPDATE USERS SET EVOLUTION='" + newEvolution + "' WHERE USERNAME='" + username + "';";
+
             try
             {
-                cmd.CommandText = "UPDATE USERS SET EVOLUTION='" + newEvolution + "' WHERE USERNAME='" + username + "';";
+                // executing transaction
                 cmd.ExecuteNonQuery();
                 result = true;
             }
             catch (Exception e)
             {
+                Console.Write(e.Message);
                 result = false;
             }
+
+            // closing database connection
             con.Close();
+
             return result;
         }
 
+        /// <summary>
+        /// Public method for getting the user score
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns>score for succes or "" for fail</returns>
         public string GetEvolution(string username)
         {
+            // creating connection
             SQLiteConnection con = CreateConnection();
             SQLiteCommand cmd;
+
+            // creating command
             cmd = con.CreateCommand();
             cmd.CommandText = "SELECT EVOLUTION FROM USERS WHERE USERNAME='" + username + "';";
 
+            // creating reader
             SQLiteDataReader dataReader;
             try
             {
+                // executing transaction
                 dataReader = cmd.ExecuteReader();
                 dataReader.Read();
+
                 string evolution = dataReader.GetString(0);
                 dataReader.Close();
+
+                // closing database connection
                 con.Close();
+
                 return evolution;
             }
             catch (Exception e)
             {
-                Console.WriteLine("Utilizatorul nu exista. Se va returna null");
+                Console.Write(e.Message);
             }
+
+            // closing database connection
             con.Close();
+
             return "";
         }
 
+        /// <summary>
+        /// Public method that returns leaderboard
+        /// </summary>
+        /// <returns>a sorted list by score with users</returns>
         public List<UserModel> GetUserRankings()
         {
             List<UserModel> userModelsRanking = new List<UserModel>();
 
+            // creating connection
             SQLiteConnection con = CreateConnection();
             SQLiteCommand cmd;
+
+            // creating command
             cmd = con.CreateCommand();
             cmd.CommandText = "SELECT USERNAME, EVOLUTION FROM USERS;";
 
+            // creating reader
             SQLiteDataReader dataReader;
             dataReader = cmd.ExecuteReader();
+
+            // adding each use in List
             while (dataReader.Read())
             {
                 userModelsRanking.Add(new UserModel(0,
@@ -171,8 +285,11 @@ namespace DatabaseAcces
                                                     null,
                                                     dataReader.GetString(1)));
             }
+
+            // closing database connection
             con.Close();
 
+            // using bubblesort for sorting by score the result
             for (int i = 0; i < userModelsRanking.Count; i++)
             {
                 int swaps = 0;
@@ -193,13 +310,24 @@ namespace DatabaseAcces
             return userModelsRanking;
         }
 
+        /// <summary>
+        /// Public method for deleting user from database
+        /// </summary>
+        /// <param name="userModel"></param>
+        /// <returns>return true for succesful operation</returns>
         public bool DeleteUser(UserModel userModel)
         {
             bool result;
+
+            // creating connection
             SQLiteConnection con = CreateConnection();
             SQLiteCommand cmd;
+
+            // creating command
             cmd = con.CreateCommand();
             cmd.CommandText = "DELETE FROM USERS WHERE USERNAME='" + userModel.Username + "';";
+
+            // executing transaction
             try
             {
                 cmd.ExecuteNonQuery();
@@ -207,9 +335,13 @@ namespace DatabaseAcces
             }
             catch (Exception e)
             {
+                Console.Write(e.Message);
                 result = false;
             }
+
+            // closing database connection
             con.Close();
+
             return result;
         }
     }

@@ -8,10 +8,6 @@ namespace Interfaces
 {
     public interface IView
     {
-        /// <summary>
-        /// Starts the Program through the viewer
-        /// </summary>
-        /// <returns> Status </returns>
         bool Init();
         void SetPresenter(IPresenter presenter);
         bool StartApplication();
