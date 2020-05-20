@@ -1,7 +1,7 @@
 ﻿/**************************************************************************
  *                                                                        *
- *  File:        View.cs                                                  *
- *  Atuhors:     Baciu H. Alexandru, Corduneanu Vlad, Haralamb Marian     *
+ *  File:        ModelController.cs                                       *
+ *  Atuhors:     Baciu H. Alexandru, Corduneanu Vlad                      *
  *  Contributions: The authors' contribution depends on the               *
  *  implementation of tasks                                               *
  *                                                                        *

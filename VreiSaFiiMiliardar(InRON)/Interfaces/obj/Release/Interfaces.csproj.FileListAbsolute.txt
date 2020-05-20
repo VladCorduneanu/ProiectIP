@@ -1,0 +1,6 @@
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Interfaces\bin\Release\Interfaces.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Interfaces\bin\Release\Interfaces.pdb
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Interfaces\obj\Release\Interfaces.csprojAssemblyReference.cache
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Interfaces\obj\Release\Interfaces.csproj.CoreCompileInputs.cache
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Interfaces\obj\Release\Interfaces.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Interfaces\obj\Release\Interfaces.pdb

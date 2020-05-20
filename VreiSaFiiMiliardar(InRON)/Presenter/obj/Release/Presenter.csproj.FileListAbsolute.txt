@@ -1,0 +1,9 @@
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Presenter\bin\Release\Presenter.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Presenter\bin\Release\Presenter.pdb
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Presenter\bin\Release\Interfaces.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Presenter\bin\Release\Interfaces.pdb
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Presenter\obj\Release\Presenter.csprojAssemblyReference.cache
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Presenter\obj\Release\Presenter.csproj.CoreCompileInputs.cache
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Presenter\obj\Release\Presenter.csproj.CopyComplete
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Presenter\obj\Release\Presenter.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Presenter\obj\Release\Presenter.pdb

@@ -1,7 +1,7 @@
 ﻿/**************************************************************************
  *                                                                        *
  *  File:        QuestionDaoService.cs                                    *
- *  Atuhors:     Baciu H. Alexandru, Corduneanu Vlad, Haralamb Marian     *
+ *  Atuhors:     Baciu H. Alexandru                                       *
  *  Contributions: The authors' contribution depends on the               *
  *  implementation of tasks                                               *
  *                                                                        *

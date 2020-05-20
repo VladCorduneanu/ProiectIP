@@ -1,0 +1,9 @@
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\bin\Release\Proxy.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\bin\Release\Proxy.pdb
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\bin\Release\Interfaces.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\bin\Release\Interfaces.pdb
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\obj\Release\Login.csprojAssemblyReference.cache
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\obj\Release\Login.csproj.CoreCompileInputs.cache
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\obj\Release\Login.csproj.CopyComplete
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\obj\Release\Proxy.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\Proxy\obj\Release\Proxy.pdb

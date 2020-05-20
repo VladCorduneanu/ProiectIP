@@ -1,0 +1,17 @@
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Release\ModelController.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Release\ModelController.pdb
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Release\DatabaseAcces.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Release\Interfaces.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Release\Proxy.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Release\System.Data.SQLite.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Release\DatabaseAcces.pdb
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Release\DatabaseAcces.dll.config
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Release\Interfaces.pdb
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Release\Proxy.pdb
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Release\System.Data.SQLite.xml
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\bin\Release\System.Data.SQLite.dll.config
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\obj\Release\ModelController.csprojAssemblyReference.cache
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\obj\Release\ModelController.csproj.CoreCompileInputs.cache
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\obj\Release\ModelController.csproj.CopyComplete
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\obj\Release\ModelController.dll
+D:\Facultate\ProiectIp\VreiSaFiiMiliardar(InRON)\ModelController\obj\Release\ModelController.pdb
