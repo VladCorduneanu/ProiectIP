@@ -668,6 +668,7 @@ namespace NView
                             }
                             break;
                         }
+                        value = rand.Next(4);
                     }
                 }
             }

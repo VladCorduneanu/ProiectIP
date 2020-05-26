@@ -1,0 +1,279 @@
+﻿/**************************************************************************
+ *                                                                        *
+ *  File:        Presenter.cs                                             *
+ *  Atuhors:     Baciu H. Alexandru, Corduneanu Vlad, Haralamb Marian     *
+ *  Contributions: The authors' contribution depends on the               *
+ *  implementation of tasks                                               *
+ *                                                                        *
+ *                                                                        *
+ *  Description: Contains logic for presetner of MVP design               *
+ *                                                                        *
+ *                                                                        *
+ *  This code and information is provided "as is" without warranty of     *
+ *  any kind, either expressed or implied, including but not limited      *
+ *  to the implied warranties of merchantability or fitness for a         *
+ *  particular purpose. You are free to use this source code in your      *
+ *  applications as long as the original copyright notice is included.    *
+ *                                                                        *
+ **************************************************************************/
+
+using Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NPresenter
+{
+    public class Presenter : IPresenter
+    {
+        // reference to view
+        private IView _view;
+        // reference to presenter
+        private IModelController _model;
+        // random for choosing the next question
+        private Random _random;
+        // reference to current user
+        private UserModel _user;
+        // lists of questions for each level of the game
+        private List<QuestionModel> _level1Questions;
+        private List<QuestionModel> _level2Questions;
+        private List<QuestionModel> _level3Questions;
+        // the current number question that decide the difficulty of the game
+        private int _currentQuestion;
+
+        /// <summary>
+        /// Constructor with parameters
+        /// Provide parameters to initialize function
+        /// </summary>
+        /// <param name="view"></param>
+        /// <param name="model"></param>
+        public Presenter(IView view, IModelController model)
+        {
+            Init(view,model);
+        }
+
+        /// <summary>
+        /// Initialize function that sets view, model, current question
+        /// and instantiate the random onject
+        /// </summary>
+        /// <param name="view"></param>
+        /// <param name="model"></param>
+        public void Init(IView view, IModelController model)
+        {
+            _view = view;
+            _model = model;
+            _currentQuestion = 0;
+            _random = new Random();
+        }
+
+        /// <summary>
+        /// Getter for username of the current user
+        /// </summary>
+        /// <returns>nickname of user</returns>
+        public string GetUsername()
+        {
+            return _user.Username;
+        }
+
+        /// <summary>
+        /// Method for sign up that provides functionality from model layer 
+        /// Called from view layer
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>true for succesful operation</returns>
+        public bool SignUp(string username, string password)
+        {
+            return _model.LoginModule().AddUser(username, password);
+        }
+
+        /// <summary>
+        /// Method for log in that provides functionality from model layer 
+        /// Called from view layer 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>true for succesful operation</returns>
+        public bool Login(string username, string password)
+        {
+            _user = _model.LoginModule().Login(username, password);
+
+            if (_user != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Method that get all the questions from database 
+        /// and set the lists with game questions by level
+        /// </summary>
+        public void StartGame()
+        {
+            _level1Questions = _model.QuestionDAO().GetQuestions(1);
+            _level2Questions = _model.QuestionDAO().GetQuestions(2);
+            _level3Questions = _model.QuestionDAO().GetQuestions(3);
+            _currentQuestion = 0;
+        }
+
+        /// <summary>
+        /// Method that provides next question by difficulty level
+        /// </summary>
+        /// <returns>next question to ask for user</returns>
+        public QuestionModel GetQuestion()
+        {
+            int number = 0;
+            QuestionModel question;
+
+            // checks if level is one
+            if (_currentQuestion < 5)
+            {
+                // getting a random number of question
+                number = _random.Next(_level1Questions.Count);
+
+                // setting the question
+                question = _level1Questions[number];
+
+                // removing question from the list
+                _level1Questions.RemoveAt(number);
+            }
+            // checks if level is two
+            else if (_currentQuestion < 10)
+            {
+                // getting a random number of question
+                number = _random.Next(_level2Questions.Count);
+
+                // setting the question
+                question = _level2Questions[number];
+
+                // removing question from the list
+                _level2Questions.RemoveAt(number);
+            }
+            // checks if level is three
+            else if (_currentQuestion < 15)
+            {
+                // getting a random number of question
+                number = _random.Next(_level3Questions.Count);
+
+                // setting the question
+                question = _level3Questions[number];
+
+                // removing question from the list
+                _level3Questions.RemoveAt(number);
+            }
+            else
+            {
+                // setting the question to null to mark the end of the game
+                question = null;
+            }
+
+            // incrementing the next question number
+            _currentQuestion++;
+
+            // next new question to view layer
+            return question;
+        }
+
+        /// <summary>
+        /// Method that update the user score if it is bigger than
+        /// his best score
+        /// </summary>
+        /// <param name="evolution"></param>
+        /// <returns>true in case of succesful operation</returns>
+        public bool UpdateUserEvolution(string evolution)
+        {
+            string currentEvolution;
+
+            // getting the best score from database
+            currentEvolution = _model.UserDAO().GetEvolution(_user.Username);
+
+            // checks for succesfull operation
+            if (currentEvolution == "")
+            {
+                return false;
+            }
+
+            // checks if current user score is better than the last
+            if (Convert.ToInt32(currentEvolution) < Convert.ToInt32(evolution))
+            {
+                // calling the update evolution method provided by model layer
+                _model.UserDAO().UpdateEvolution(_user.Username, evolution);
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Method that get all the users score from database 
+        /// and create best of ten for ranking 
+        /// </summary>
+        /// <returns> a string used for display in view layer</returns>
+        public string GetRankingTable()
+        {
+            // creating string that will be displayed in ranking view
+            StringBuilder sb = new StringBuilder("");
+
+            // calling the ranking method provided by model layer
+            List<UserModel> usersRanking = _model.UserDAO().GetUserRankings();
+
+            // adding the score to the string 
+            for (int i = 0; i < usersRanking.Count; i++)
+            {
+                if (usersRanking[i].Evolution == "15")
+                {
+                    sb.Append(usersRanking[i].Username + " a castigat premiul cel mare, ajungand la intrebarea " + usersRanking[i].Evolution + "\n");
+                }
+                else
+                {
+                    sb.Append(usersRanking[i].Username + " nu a castigat inca, oprindu-se la intrebarea numarul " + usersRanking[i].Evolution + "\n");
+                }
+
+                // checks if top ten was achieved
+                if (i == 9)
+                {
+                    break;
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Method that reset the user score to 0
+        /// called from view layer
+        /// </summary>
+        public void ResetScore()
+        {
+            // calling the update evolution with 0 as parameter provided by model layer
+            _model.UserDAO().UpdateEvolution(_user.Username, "0");
+        }
+
+        /// <summary>
+        /// Method that changes userr password
+        /// called from view layer
+        /// </summary>
+        /// <param name="password"></param>
+        public void ChangePassword(string password)
+        {
+            // calling the update user with new password as parameter provided by model layer
+            _model.LoginModule().UpdateUser(_user, password);
+        }
+
+        /// <summary>
+        /// Method that delete user account
+        /// from called by view layer
+        /// </summary>
+        public void DeleteAccount()
+        {
+            // calling the delete user method provided by model layer
+            _model.UserDAO().DeleteUser(_user);
+        }
+       
+    }
+}
